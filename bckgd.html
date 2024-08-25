@@ -8,119 +8,131 @@
 
 <title>Anthony Boulton - Background Designs</title>
 
-<meta charset="utf-8"/>
-<META NAME="description" CONTENT="Background Designs of Anthony Boulton">
-<META NAME="keywords" CONTENT="Portfolio, Background Designs">
-<META="robots" CONTENT="index,nofollow">
+	<meta charset="utf-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<META NAME="description" CONTENT="Background Designs of Anthony Boulton">
+	<META NAME="keywords" CONTENT="Portfolio, Background Designs">
+	<META="robots" CONTENT="index,nofollow">
 
 <!-- ******************************************************************** -->
 <!-- *************  C A S C A D I N G   S T Y L E S H E E T  ************ -->
 <!-- ******************************************************************** -->
-
-<link href="agb.css" rel="stylesheet" type="text/css">
-
+	<link href="css/agb.css" rel="stylesheet" type="text/css">
 
 <!-- ******************************************************************** -->
-<!-- ***************  S L I D E S H O W   R O U T I N E S  ************** -->
+<!-- **************  L I G H T B O X 2   L I B R A R I E S  ************* -->
 <!-- ******************************************************************** -->
+	<link href="css/lightbox.min.css" rel="stylesheet" type="text/css">
 
-<!-- pre-define slide structure -->
-<script language="Javascript">
-<!--
-  var slide_list = new Array ("rb1","zoo")
-// -->
-</script>
-
-<!-- script routines -->
-<script language="Javascript" src="slides.js">
-<!--
-// -->
-</script>
-
-<!-- ******************************************************************** -->
-<!-- ***********  M E N U   R O L L O V E R   R O U T I N E S  ********** -->
-<!-- ******************************************************************** -->
-
-<!-- menu routines -->
-<script language="Javascript" src="nav.js">
-<!--
-// -->
-</script>
-
-<!-- ******************************************************************** -->
-
-</head>
-
-<a name="top"></a>
-
-<!-- Initialization -->
-<body onload="InitSlideShow()">
+<!--<a name="top"></a>-->
 
 <!-- ******************************************************************** -->
 <!-- *****************************  M E N U  **************************** -->
 <!-- ******************************************************************** -->
 
-<!-- Initialization -->
-<body onLoad="MM_preloadImages(
-            'menu/nav_cs_1.gif','menu/nav_cs_2.gif',
-            'menu/nav_bd_3.gif','menu/nav_bd_2.gif',
-            'menu/nav_cd_1.gif','menu/nav_cd_2.gif',
-            'menu/nav_ld_1.gif','menu/nav_ld_2.gif',
-            'menu/nav_ss_1.gif','menu/nav_ss_2.gif',
-            'menu/nav_ca_1.gif','menu/nav_ca_2.gif', 'menu/agb_logo_1.gif')">
-        
-<table width="600" align="center" border="0" cellpadding="0" cellspacing="0" id=cMenu>
+<body>
+	<!-- burger button for mobile screen header -->
+	<div class="mobile-menu-btn">
+		<img src="menu/menu-burger.png" alt="Mobile Menu Button">
+	</div>
 
-	<!--Begin Logo -->
-	<tr>
-	  <!--<td width="600" align="center" COLSPAN="6"><a href="index.html"><img src="menu/agb_logo.gif" border="0" alt="Anthony's Animation Portfolio"></a></td>-->
-	  <td width="600" align="center" colspan="5"><a href="index.html"><img src="menu/agb_logo_1.gif" border="0" alt="Anthony's Animation Portfolio"></a></td>
-	</tr>
-	<!--End Logo -->
+	<!-- regular website header -->
+	<header class="header-main">
+		<nav>
+			<!-- separate logo from navigation menu so can isolate for mobile screen coding -->
+			<div class="logo" >
+				<a href="index.html">
+					<img src="menu/agb_logo_2500.png" alt="Animation Portfolio of Anthony Boulton">
+				</a>					
+			</div>
+			<!-- unordered list for navigation menu using CSS -->
+			<ul>			
+				<li><a href="stryb.html">Storyboards</a></li>
+				<li><a class="home" href="#">Backgrounds</a></li>
+				<li><a href="chard.html">Characters</a></li>
+				<li><a href="lifed.html">Life Drawing</a></li>				
+				<li><a href="cntct.html">Contact</a></li>
+				<!-- *** online tutor, Dani Krossing, uses dropdown menu under one nav item "gallery" -->
+				<!-- *** go see Youtube video: "Easy Responsive Dropdown Navigation for Beginners with HTML & CSS" -->
+			</ul>
+		</nav>
+		<!--<div class="header-main-sm"></div>  social media section -->
+	</header>
 
-	<!--Begin Menu-->
-	<tr>
-	  <td width="125" height="60" align="center"> <a href="stryb.html" target="_top" onClick="MM_nbGroup('down','group1','Storyboards','menu/nav_ss_2.gif',1)" onMouseOver="MM_nbGroup('over','Storyboards','menu/nav_ss_2.gif','menu/nav_ss_2.gif',1)" onMouseOut="MM_nbGroup('out')"><img name="Storyboards" src="menu/nav_ss_1.gif" border="0" alt="" onLoad=""></a></td>
-	  <!--<td width="100" height="60" align="center"> <a href="flani.html" target="_top" onClick="MM_nbGroup('down','group1','Flash Cartoons','menu/nav_fc_2.gif',1)" onMouseOver="MM_nbGroup('over','Flash Cartoons','menu/nav_fc_2.gif','menu/nav_fc_2.gif',1)" onMouseOut="MM_nbGroup('out')"><img name="Flash Cartoons" src="menu/nav_fc_1.gif" border="0" alt="" onLoad=""></a></td>-->
-	  <td width="125" height="60" align="center"> <a href="chard.html" target="_top" onClick="MM_nbGroup('down','group1','Character Designs','menu/nav_cd_2.gif',1)" onMouseOver="MM_nbGroup('over','Character Designs','menu/nav_cd_2.gif','menu/nav_cd_2.gif',1)" onMouseOut="MM_nbGroup('out')"><img name="Character Designs" src="menu/nav_cd_1.gif" border="0" alt="" onLoad=""></a></td>
-	  <td width="125" height="60" align="center"> <a href="bckgd.html" target="_top" onClick="MM_nbGroup('down','group1','Background Designs','menu/nav_bd_2.gif',1)" onMouseOver="MM_nbGroup('over','Background Designs','menu/nav_bd_2.gif','menu/nav_bd_2.gif',1)" onMouseOut="MM_nbGroup('out')"><img name="Background Designs" src="menu/nav_bd_3.gif" border="0" alt="" onLoad=""></a></td>
-	  <td width="125" height="60" align="center"> <a href="lifed.html" target="_top" onClick="MM_nbGroup('down','group1','Life Drawing','menu/nav_ld_2.gif',1)" onMouseOver="MM_nbGroup('over','Life Drawing','menu/nav_ld_2.gif','menu/nav_ld_2.gif',1)" onMouseOut="MM_nbGroup('out')"><img name="Life Drawing" src="menu/nav_ld_1.gif" border="0" alt="" onLoad=""></a></td>
-	  <td width="125" height="60" align="center"> <a href="MAILTO:anthonygboulton@gmail.com?subject=Portfolio%20Inquiry" target="_top" onClick="MM_nbGroup('down','group1','Contact Artist','menu/nav_ca_2.gif',1)" onMouseOver="MM_nbGroup('over','c','menu/nav_ca_2.gif','menu/nav_ca_2.gif',1)" onMouseOut="MM_nbGroup('out')"><img name="Contact Artist" src="menu/nav_ca_1.gif" border="0" alt="" onLoad=""></a></td>
-	  <!-- <td width="25">&nbsp;</td> -->
-	</tr>	
-	<!--End Menu-->
-				
-</table>
-
+<!-- 123456789012345678901234567890123**321098765432109876543210987654321 -->
 <!-- ******************************************************************** -->
 <!-- **************  B A C K G R O U N D   D E S I G N S   ************** -->
 <!-- ******************************************************************** -->
 
-<table align="center" width="800" >
-<tr>
-	<br>
-    <td width="400" align="center">
-	UNDER CONSTRUCTION
-    </td>
-</tr>
-</table>
+	<!-- Blurb -->
+	<section class="section-body">	
+		<p>
+			Explore <b>background design samples</b> by clicking on a gallery image.
+			&nbsp;&nbsp;
+			Selected picture will pop up in larger <i>Lightbox format</i>.
+		</p>
+		<p>
+			While in Lightbox mode, click on right side of image to advance to next background design.
+			&nbsp;&nbsp;
+			To exit, click "X" or anywhere outside picture frame.
+		</p>
+		<br>
+	</section>		
 
-<br><br>
+<!-- ******************************************************************** -->
+<!-- ********************  I M A G E   G A L L E R Y  ******************* -->
+<!-- ******************************************************************** -->  
+<!--<table>-->
+<!-- PUT IN ARTTYPE DIV CLASS -->
+
+<section>
+	<div class="container">
+		<div class="gallery">
+			<a href="art/vif_bw.jpg" data-lightbox="artwork" data-title="village in forest B&W"><img src="art/vif_sm_bw.jpg" alt="village in forest B&W"></a>
+			<a href="art/vif_fc.jpg" data-lightbox="artwork" data-title="village in forest"><img src="art/vif_sm_fc.jpg" alt="village in forest"></a>
+			<a href="art/fcs_bw.jpg" data-lightbox="artwork" data-title="future cityscape"><img src="art/fcs_sm_bw.jpg" alt="future cityscape"></a>
+			<a href="art/nhe_bw.jpg" data-lightbox="artwork" data-title="norse hall exterior"><img src="art/nhe_sm_bw.jpg" alt="norse hall exterior"></a>
+			<a href="art/ni1_bw.jpg" data-lightbox="artwork" data-title="norse hall interior 1"><img src="art/ni1_sm_bw.jpg" alt="norse hall interior 1"></a>
+			<a href="art/ni2_bw.jpg" data-lightbox="artwork" data-title="norse hall interior 2"><img src="art/ni2_sm_bw.jpg" alt="norse hall interior 2"></a>			
+			<a href="art/bth_bw.jpg" data-lightbox="artwork" data-title="treehouse exterior"><img src="art/bth_sm_bw.jpg" alt="treehouse exterior"></a>
+		  <!--
+			<a href="art/ri1_bw.jpg" data-lightbox="artwork" data-title="office interior 1"><img src="art/ri1_sm_bw.jpg" alt="office interior 1"></a>
+			<a href="art/ri2_bw.jpg" data-lightbox="artwork" data-title="office interior 2"><img src="art/ri2_sm_bw.jpg" alt="office interior 2"></a>
+		  -->
+		</div>
+	</div>
+</section>
 
 <!-- ******************************************************************** -->
 <!-- *************************  C R E D I T S  ************************** -->
 <!-- ******************************************************************** -->
 
-<table width="800" align="center">	
-  <tr>
-	<td align="center" colspan="3" id=cByline style="background-color: white">
-	  art & web authoring © &nbsp;<a href="MAILTO:anthonygboulton@gmail.com?subject=Portfolio%20Inquiry">Anthony Boulton</a>
-    </td>
-  </tr>
-</table>
-<!-- © -->
+<br><br>
+<footer>
+	<p id="cByline">
+		art & web authoring &copy;
+		<a href="cntct.html">Anthony Boulton</a>
+	</p>
+</footer>
 	
-<!-- 123456789012345678901234567890123**321098765432109876543210987654321 -->
+<!-- 123456789012345678901234567890123**321098765432109876543210987654321 -->	
+<!-- ******************************************************************** -->
+<!-- ******  O V E R R I D E   L I G H T B O X 2  D E F A U L T S  ****** -->
+<!-- ******************************************************************** -->
+
+	<script src="js/lightbox-plus-jquery.min.js" >
+			lightbox.option({
+				'positionFromTop': 200,
+				'wrapAround': true,
+				'disableScrolling': true
+			})
+	</script>
 
 </body>
+
+	<script>
+		src="js/mobile-nav.js"
+	</script>
+	
 </html>

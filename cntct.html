@@ -1,17 +1,18 @@
 <!DOCTYPE html><html lang="en">
+
 <head>
 
 <!-- ******************************************************************** -->
 <!-- ***********  C O N T E N T   C L A S S I F I C A T I O N  ********** -->
 <!-- ******************************************************************** -->
 
-<title>Anthony Boulton - Character Designs</title>
+<title>Anthony Boulton - Contact Artist</title>
 
 	<meta charset="utf-8"/>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<META NAME="description" CONTENT="Character Designs of Anthony Boulton">
-	<META NAME="keywords" CONTENT="Portfolio, Character Designs">
+	<META NAME="description" CONTENT="Life Drawing of Anthony Boulton">
+	<META NAME="keywords" CONTENT="Portfolio, Life Drawing">
 	<META="robots" CONTENT="index,nofollow">
 
 <!-- ******************************************************************** -->
@@ -19,14 +20,9 @@
 <!-- ******************************************************************** -->
 	<link href="css/agb.css" rel="stylesheet" type="text/css">
 
-<!-- ******************************************************************** -->
-<!-- **************  L I G H T B O X 2   L I B R A R I E S  ************* -->
-<!-- ******************************************************************** -->
-	<link href="css/lightbox.min.css" rel="stylesheet" type="text/css">
-
 </head>
 
-<!--<a name="top"></a>-->
+<!-- <a name="top"></a> -->
 
 <!-- ******************************************************************** -->
 <!-- *****************************  M E N U  **************************** -->
@@ -51,9 +47,9 @@
 			<ul>			
 				<li><a href="stryb.html">Storyboards</a></li>
 				<li><a href="bckgd.html">Backgrounds</a></li>
-				<li><a class="home" href="#">Characters</a></li>
+				<li><a href="chard.html">Characters</a></li>
 				<li><a href="lifed.html">Life Drawing</a></li>				
-				<li><a href="cntct.html">Contact</a></li>
+				<li><a class="home" href="#">Contact</a></li>
 				<!-- *** online tutor, Dani Krossing, uses dropdown menu under one nav item "gallery" -->
 				<!-- *** go see Youtube video: "Easy Responsive Dropdown Navigation for Beginners with HTML & CSS" -->
 			</ul>
@@ -63,41 +59,39 @@
 
 <!-- 123456789012345678901234567890123**321098765432109876543210987654321 -->
 <!-- ******************************************************************** -->
-<!-- ***************  C H A R A C T E R   D E S I G N S   *************** -->
+<!-- *******************  C O N T A C T   A R T I S T  ****************** -->
 <!-- ******************************************************************** -->
 
 	<!-- Blurb -->
-	<section class="section-body">	
-		<p>
-			Explore <b>character design samples</b> by clicking on a gallery image.
-			&nbsp;&nbsp;
-			Selected picture will pop up in larger <i>Lightbox format</i>.
-		</p>
-		<p>
-			While in Lightbox mode, click on right side of image to advance to next character design.
-			&nbsp;&nbsp;
-			To exit, click "X" or anywhere outside picture frame.
-		</p>
+	<section class="section-body">
+		<div class="contact-body">
+			<div class="contact-box"> 
+				<form action="https://formspree.io/f/xblrpjgl" method="POST">
+					<h3>Hello there!&nbsp;&nbsp;Please drop a line ...</h3>
+					<input class="contactArea" type="text" name="Name" placeholder="Full Name" required />															
+					<input class="contactArea" type="text" name="Email" placeholder="E-mail Address" required />
+					<!--  -->				
+					<!--<input class="contactArea" id="contactMsg" type="textarea" name="Message" placeholder="Message" required /> -->
+					<textarea class="contactArea" id="contactMsg" name="Message" placeholder="Message" required></textarea>
+					<br>
+					<button class="contactBtn" type="submit">Send</button>
+				</form>		
+				<br>		
+				<p>Form validation performed by third-party <i>Formspree</i>.</p>
+				<p>&nbsp;</p>
+			</div>
+		</div>
 		<br>
 	</section>
-
-<!-- ******************************************************************** -->
-<!-- ********************  I M A G E   G A L L E R Y  ******************* -->
-<!-- ******************************************************************** -->  
-<!--<table>-->
-<!-- PUT IN ARTTYPE DIV CLASS -->
-
-<section>
-	<div class="container">
-		<div class="gallery">
-			<a href="art/by1_bw.jpg" data-lightbox="art model" data-title="toddler poses 1"><img src="art/by1_sm_bw.jpg" alt="toddler poses 1"></a>
-			<a href="art/by2_bw.jpg" data-lightbox="art model" data-title="toddler poses 2"><img src="art/by2_sm_bw.jpg" alt="toddler poses 2"></a>
-			<a href="art/by3_bw.jpg" data-lightbox="art model" data-title="toddler poses 3"><img src="art/by3_sm_bw.jpg" alt="toddler poses 3"></a>
-			<a href="art/lnx_bw.jpg" data-lightbox="art model" data-title="Lionex poses"><img src="art/lnx_sm_bw.jpg" alt="Lionex poses"></a>
-		</div>
-	</div>
-</section>
 	
+	<!--
+	<form>      
+	  <input name="name" type="text" class="reply-input" placeholder="Name" >   
+	  <input name="email" type="text" class="reply-input" placeholder="Email" >
+	  <textarea name="text" class="reply-input" placeholder="Message"></textarea>  
+	</form>
+	-->
+
 <!-- ******************************************************************** -->
 <!-- *************************  C R E D I T S  ************************** -->
 <!-- ******************************************************************** -->
@@ -106,27 +100,11 @@
 <footer>
 	<p id="cByline">
 		art & web authoring &copy;
-		<a href="cntct.html">Anthony Boulton</a>
+		<a href="#">Anthony Boulton</a>
 	</p>
 </footer>
 
 <!-- 123456789012345678901234567890123**321098765432109876543210987654321 -->
-<!-- ******************************************************************** -->
-<!-- ******  O V E R R I D E   L I G H T B O X 2  D E F A U L T S  ****** -->
-<!-- ******************************************************************** -->
-
-	<script src="js/lightbox-plus-jquery.min.js" >
-			lightbox.option({
-				'positionFromTop': 200,
-				'wrapAround': true,
-				'disableScrolling': true
-			})
-	</script>
 
 </body>
-
-	<script>
-		src="js/mobile-nav.js"
-	</script>
-	
 </html>

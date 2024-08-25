@@ -6,246 +6,157 @@
 <!-- ***********  C O N T E N T   C L A S S I F I C A T I O N  ********** -->
 <!-- ******************************************************************** -->
 
-<title>Anthony Boulton - Animation Portfolio</title>
+	<title>Anthony Boulton - Animation Portfolio</title>
 
-<meta charset="utf-8"/>
-<META NAME="description" CONTENT="Animation Portfolio of Anthony Boulton">
-<META NAME="keywords" CONTENT="Portfolio, Animation">
-<META="robots" CONTENT="index,nofollow">
+	<meta charset="utf-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<META NAME="description" CONTENT="Animation Portfolio of Anthony Boulton">
+	<META NAME="keywords" CONTENT="Portfolio, Animation">
+	<META="robots" CONTENT="index,nofollow">
 
 <!-- ******************************************************************** -->
 <!-- *************  C A S C A D I N G   S T Y L E S H E E T  ************ -->
 <!-- ******************************************************************** -->
-
-<link href="agb.css" rel="stylesheet" type="text/css">
-
+	<link href="css/agb.css" rel="stylesheet" type="text/css">
 
 <!-- ******************************************************************** -->
-<!-- ***************  S L I D E S H O W   R O U T I N E S  ************** -->
+<!-- **************  L I G H T B O X 2   L I B R A R I E S  ************* -->
 <!-- ******************************************************************** -->
-
-<!-- pre-define slide structure -->
-<script language="Javascript">
-<!--
-  var slide_list = new Array ("zoo","hvw","ufo")
-// -->
-</script>
-
-<!-- script routines -->
-<script language="Javascript" src="slides.js">
-<!--
-// -->
-</script>
-
-<!-- ******************************************************************** -->
-<!-- ***********  M E N U   R O L L O V E R   R O U T I N E S  ********** -->
-<!-- ******************************************************************** -->
-
-<!-- menu routines -->
-<script language="Javascript" src="nav.js">
-<!--
-// -->
-</script>
-
-<!-- ******************************************************************** -->
+	<link href="css/lightbox.min.css" rel="stylesheet" type="text/css">
 
 </head>
 
-<a name="top"></a>
-
-<!-- Initialization -->
-<body onload="InitSlideShow()">
-<!--</body>-->
+<!--<a name="top"></a>-->
 
 <!-- ******************************************************************** -->
 <!-- *****************************  M E N U  **************************** -->
 <!-- ******************************************************************** -->
 
-<!-- Initialization -->
-<body onLoad="MM_preloadImages(
-            'menu/nav_cs_1.gif','menu/nav_cs_2.gif',
-            'menu/nav_bd_1.gif','menu/nav_bd_2.gif',
-            'menu/nav_cd_1.gif','menu/nav_cd_2.gif',
-            'menu/nav_ld_1.gif','menu/nav_ld_2.gif',
-            'menu/nav_ss_1.gif','menu/nav_ss_2.gif',
-            'menu/nav_ca_1.gif','menu/nav_ca_2.gif', 'menu/agb_logo_3.gif')">        
+<body>
+	<!-- burger button for mobile screen header -->
+	<div class="mobile-menu-btn">
+		<img src="menu/menu-burger.png" alt="Mobile Menu Button">
+	</div>
 
-<table width="600" align="center" border="0" cellpadding="0" cellspacing="0" id=cMenu>
-	<!--Begin Logo -->
-	<tr>	  
-	  <td width="600" align="center" colspan="5">
-	    <a href="index.html"><img src="menu/agb_logo_3.gif" border="0" alt="Anthony's Animation Portfolio"></a>
-	  </td>
-	</tr>
-	<!--End Logo -->
+	<!-- regular website header -->
+	<header class="header-main">
+		<nav>
+			<!-- separate logo from navigation menu so can isolate for mobile screen coding -->
+			<div class="logo" >
+				<a href="#">
+					<img src="menu/agb_logo_2500.png" alt="Animation Portfolio of Anthony Boulton">
+				</a>					
+			</div>
+			<!-- unordered list for navigation menu using CSS -->
+			<ul>			
+				<li><a href="stryb.html">Storyboards</a></li>
+				<li><a href="bckgd.html">Backgrounds</a></li>
+				<li><a href="chard.html">Characters</a></li>
+				<li><a href="lifed.html">Life Drawing</a></li>				
+				<li><a href="cntct.html">Contact</a></li>
+				<!-- *** online tutor, Dani Krossing, uses dropdown menu under one nav item "gallery" -->
+				<!-- *** go see Youtube video: "Easy Responsive Dropdown Navigation for Beginners with HTML & CSS" -->
+			</ul>
+		</nav>
+		<!--<div class="header-main-sm"></div>  social media section -->
+	</header>
 
-	<!--Begin Menu-->
-	<tr>
-	  <td width="125" height="60" align="center"> <a href="stryb.html" target="_top" onClick="MM_nbGroup('down','group1','Storyboards','menu/nav_ss_2.gif',1)" onMouseOver="MM_nbGroup('over','Storyboards','menu/nav_ss_2.gif','menu/nav_ss_2.gif',1)" onMouseOut="MM_nbGroup('out')"><img name="Storyboards" src="menu/nav_ss_1.gif" border="0" alt="" onLoad=""></a></td>
-	  <!--<td width="100" height="60" align="center"> <a href="flani.html" target="_top" onClick="MM_nbGroup('down','group1','Flash Cartoons','menu/nav_fc_2.gif',1)" onMouseOver="MM_nbGroup('over','Flash Cartoons','menu/nav_fc_2.gif','menu/nav_fc_2.gif',1)" onMouseOut="MM_nbGroup('out')"><img name="Flash Cartoons" src="menu/nav_fc_1.gif" border="0" alt="" onLoad=""></a></td>-->
-	  <td width="125" height="60" align="center"> <a href="chard.html" target="_top" onClick="MM_nbGroup('down','group1','Character Designs','menu/nav_cd_2.gif',1)" onMouseOver="MM_nbGroup('over','Character Designs','menu/nav_cd_2.gif','menu/nav_cd_2.gif',1)" onMouseOut="MM_nbGroup('out')"><img name="Character Designs" src="menu/nav_cd_1.gif" border="0" alt="" onLoad=""></a></td>
-	  <td width="125" height="60" align="center"> <a href="bckgd.html" target="_top" onClick="MM_nbGroup('down','group1','Background Designs','menu/nav_bd_2.gif',1)" onMouseOver="MM_nbGroup('over','Background Designs','menu/nav_bd_2.gif','menu/nav_bd_2.gif',1)" onMouseOut="MM_nbGroup('out')"><img name="Background Designs" src="menu/nav_bd_1.gif" border="0" alt="" onLoad=""></a></td>
-	  <td width="125" height="60" align="center"> <a href="lifed.html" target="_top" onClick="MM_nbGroup('down','group1','Life Drawing','menu/nav_ld_2.gif',1)" onMouseOver="MM_nbGroup('over','Life Drawing','menu/nav_ld_2.gif','menu/nav_ld_2.gif',1)" onMouseOut="MM_nbGroup('out')"><img name="Life Drawing" src="menu/nav_ld_1.gif" border="0" alt="" onLoad=""></a></td>
-	  <td width="125" height="60" align="center"> <a href="MAILTO:anthonygboulton@gmail.com?subject=Portfolio%20Inquiry" target="_top" onClick="MM_nbGroup('down','group1','Contact Artist','menu/nav_ca_2.gif',1)" onMouseOver="MM_nbGroup('over','c','menu/nav_ca_2.gif','menu/nav_ca_2.gif',1)" onMouseOut="MM_nbGroup('out')"><img name="Contact Artist" src="menu/nav_ca_1.gif" border="0" alt="" onLoad=""></a></td>
-	</tr>	
-	<!--End Menu-->				
-</table>
-
-<!-- <br> -->
-
-<!-- ******************************************************************** -->
-<!-- ******************  P O R T F O L I O   B L U R B  ***************** -->
-<!-- ******************************************************************** -->
-
-<table align="center">	
-  <tr>
-    <td align="center" height="35" >
-      Welcome to my online Portfolio!
-	  &nbsp;&nbsp; 	  
-	  Explore my samples and let's make fun cartoons together.
-    </td>
-  </tr>
-  <tr>
-    <td>&nbsp;
-    </td>	
-  </tr>
-</table>
-  
 <!-- 123456789012345678901234567890123**321098765432109876543210987654321 -->
 <!-- ******************************************************************** -->
-<!-- *************  I N D E X   P A G E   S L I D E S H O W  ************ -->
+<!-- **************  P O R T F O L I O   D I R E C T I O N  ************* -->
 <!-- ******************************************************************** -->
 
-<table align="center" border="0" cellpadding="0" cellspacing="0">
-<td width="900" align="center" valign="middle" height="35" >
-  <form class="slide">
-	<input type="button" value="<<  Previous Art" onclick="PrevSlide()">&nbsp; &nbsp; &nbsp;
-	<input type="button" value="Next Art  >>" onclick="NextSlide()">
-  </form>
-</td>
-</table>
+	<!-- Blurb -->
+	<section class="section-body">		
+		<h4>
+			Welcome to my online Portfolio!
+			&nbsp;&nbsp;
+			<i class="tilt-face">Let's make fun cartoons together!</i>
+		</h4>		
+		<!--
+		<table>
+			<tr>
+				<td class="bold-face">
+					Welcome to my online Portfolio!
+				</td>
+				<td class="norm-face">
+					Explore my samples by clicking on gallery images.
+				</td>
+			</tr>
+			<tr>			
+				<td class="norm-face">
+					Selected picture will pop up in larger Lightbox format.
+					&nbsp;&nbsp;
+				</td>
+				<td class="norm-face">
+					Click outside frame to return to gallery.
+					&nbsp;&nbsp;
+				</td>					
+				<td class="tilt-face">
+					Let's make fun cartoons together!
+				</td>
+			</tr>
+		</table>
+		-->
+		<p>
+			Explore my <b>art samples</b> by clicking on gallery images.
+			&nbsp;&nbsp;
+			Selected picture will pop up in larger <i>Lightbox format</i>.
+			&nbsp;&nbsp;
+			Click "X" or anywhere outside frame to return to gallery.
+			&nbsp;&nbsp;
+		</p>
+		<br>
+	</section>	
 
-<table align="center" cellpadding="0" cellspacing="0">
-	<!-- <tr>&nbsp; width="1000" -->
+<!-- ******************************************************************** -->
+<!-- ********************  I M A G E   G A L L E R Y  ******************* -->
+<!-- ******************************************************************** -->  
 
-<!-- Begin Art -->
-  <tr>
-	<!-- SLIDE LAYOUTS -->
-	<!-- Art -->
-	<!-- tan bg -->
-
-	<!-- Marker for relative displacement of ensuing slides -->
-	<div class="slider">
-	<table align="center" >
-	  <tr></tr>
-	</table>
+<!-- Main Gallery -->	
+	<div class="container">
+		<div class="gallery">
+			<a href="art/sks_fc.jpg" data-lightbox="artwork" data-title="school bus stop"><img src="art/sks_sm_fc.jpg"></a>
+			<a href="art/zoo_fc.jpg" data-lightbox="artwork" data-title="cute animals"><img src="art/zoo_sm_fc.jpg" alt="cute animals"></a>
+			<a href="art/ufo_fc.jpg" data-lightbox="artwork" data-title="ufo on front lawn"><img src="art/ufo_sm_fc.jpg" alt="ufo on front lawn"></a>
+			<a href="art/vif_bw.jpg" data-lightbox="artwork" data-title="village in forest B&W"><img src="art/vif_sm_bw.jpg" alt="village in forest B&W"></a>
+			<a href="art/vif_fc.jpg" data-lightbox="artwork" data-title="village in forest"><img src="art/vif_sm_fc.jpg" alt="village in forest"></a>
+			<a href="art/fcs_bw.jpg" data-lightbox="artwork" data-title="future cityscape"><img src="art/fcs_sm_bw.jpg" alt="future cityscape"></a>
+			<a href="art/hvw_fc.jpg" data-lightbox="artwork" data-title="superhero vs werewolf"><img src="art/hvw_sm_fc.jpg" alt="superhero vs werewolf"></a>
+		</div>
 	</div>
-
-	<!-- ZOO -->
-	<div id="slide_zoo" class="slide">
-	<table align="center" class="art_box" width="900">
-	  <tr>
-		<a name="zoo" href="index.html"></a>
-		<!-- ART PIC -->
-		<td align="center" class="art_pix" width="900" height="500">
-		  <img src="art/Zoo_fc.jpg" alt="Zoo, July 2024" border="1" class="art_pic">		  		
-		  <!--<td width="1000" align="center"><a href="index.html"><img src="stryb/rb_20240712/rb_10b.jpg" border="0" alt="rb 10"></a></td>-->
-		</td>		
-	  </tr>
-	  <tr>
-		<td align="center" colspan="3" id=cByline style="background-color: white">
-		  art & web authoring © &nbsp;<a href="MAILTO:anthonygboulton@gmail.com?subject=Portfolio%20Inquiry">Anthony Boulton</a>
-	    </td>
-	  </tr>	  
-	</table>
-	</div>
-
-	<!-- hvw -->
-	<div id="slide_hvw" class="slide">
-	<table align="center" class="art_box" width="900">
-	  <tr>
-	  <a name="hvw" href="index.html"></a>
-		<!-- ART PIC -->			
-		<td align="center" class="art_pix" width="900" height="500">
-		  <img src="art/hvw_3_fc.jpg" alt="HVW, July 2024" border="1" class="art_pic">
-		</td>
-	  </tr>
-	  <tr>
-		<td align="center" colspan="3" id=cByline style="background-color: white">
-		  art & web authoring © &nbsp;<a href="MAILTO:anthonygboulton@gmail.com?subject=Portfolio%20Inquiry">Anthony Boulton</a>
-	    </td>
-	  </tr>  
-	</table>
-	</div>
-
-	<!-- ufo -->
-	<div id="slide_ufo" class="slide">
-	<table align="center" class="art_box" width="900">
-	  <tr>
-	  <a name="ufo" href="index.html"></a>
-		<!-- ART PIC -->			
-		<td align="center" class="art_pix" width="900" height="500">
-		  <img src="art/ufo_fc.jpg" alt="UFO, July 2024" border="1" class="art_pic">		  		
-		</td>
-	  </tr>
-	  <tr>
-		<td align="center" colspan="3" id=cByline style="background-color: white">
-		  art & web authoring © &nbsp;<a href="MAILTO:anthonygboulton@gmail.com?subject=Portfolio%20Inquiry">Anthony Boulton</a>
-	    </td>
-	  </tr>  
-	</table>
-	</div>	<!-- ********** Insert pics HERE ! ********** -->
-		
-  </tr>
-  
-<!--End Art -->
-
-</table>
-
 
 
 <!-- ******************************************************************** -->
 <!-- *************************  C R E D I T S  ************************** -->
 <!-- ******************************************************************** -->
 
-<!--<table align="center">	 -->
-<!--  <tr> -->
-<!--    <td align="center" id=cByline style="background-color: white"> -->
-<!--	 art & web authoring by &nbsp;<a href="MAILTO:anthonygboulton@gmail.com?subject=Portfolio%20Inquiry">Anthony Boulton</a> -->
-<!--    </td>  -->
-<!--  </tr>  -->
-<!--  </table> -->
-<!-- © -->
-	
+<br><br>
+<footer>
+	<p id="cByline">
+		art & web authoring &copy;
+		<a href="cntct.html">Anthony Boulton</a>
+	</p>
+</footer>
+
 <!-- 123456789012345678901234567890123**321098765432109876543210987654321 -->
-
+<!-- ******************************************************************** -->
+<!-- ******  O V E R R I D E   L I G H T B O X 2  D E F A U L T S  ****** -->
+<!-- ******************************************************************** -->
+	
+	<script src="js/lightbox-plus-jquery.min.js" >
+			lightbox.option({
+				'positionFromTop': 200,
+				'wrapAround': true,
+				'disableScrolling': true
+			})
+	</script>
+	
 </body>
-</html>
 
-<!-- ******************************************************************** -->
-<!-- ************************  C A R T O O N S  ************************* -->
-<!-- ******************************************************************** -->
-<!-- -->
-<!-- Superhero -->
-<!--  <td width="400" align="center"> -->
-<!--    <OBJECT classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" -->
-<!--        codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0" -->
-<!--        WIDTH="301" HEIGHT="240" id="Superhero" ALIGN="center"> -->
-   <!-- small size: -->
-   <!-- WIDTH="301" HEIGHT="240" id="Superhero" ALIGN="center"> -->
-   <!-- mid size: -->
-       <!-- WIDTH="360" HEIGHT="286" id="Superhero" ALIGN="center"> -->
-<!--      <PARAM NAME=movie VALUE="iHero.swf"> -->
-<!--      <PARAM NAME=quality VALUE=high> -->
-<!--      <PARAM NAME=bgcolor VALUE=#efefef> -->
-<!--     <EMBED src="iHero.swf" quality=high bgcolor=#FFFFFF -->
-<!--       WIDTH="400" HEIGHT="400" -->
-<!--        NAME="Superhero" ALIGN="" -->
-<!--        TYPE="application/x-shockwave-flash" -->
-<!--        PLUGINSPAGE="http://www.macromedia.com/go/getflashplayer"> -->
-<!--      </EMBED> -->
-<!--    </OBJECT> -->
-<!--  </td> -->
-<!--  <td width="250"> -->
-<!--    &nbsp; -->
-<!--  </td> -->
+	<script>
+		src="js/mobile-nav.js"
+	</script>
+
+</html>

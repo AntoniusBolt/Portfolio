@@ -1,0 +1,388 @@
+/* can declare "font-face"s here */
+
+
+/* variable for number of menu items */
+:root {
+	--menu-count: 5;
+}
+
+/* website credits */
+#cByline {
+	background-color: silver;
+	color: rgba(51, 85, 204, 1);
+	font-family: geneva,arial;
+	font-size: 10pt;
+	font-weight: normal;
+		text-align: center;
+	}
+
+/* main area of website */
+body{
+	/* note: "left: 0rem;" eliminates small margin on screen left */
+	background-color: silver;
+}
+
+/* anchor tags */
+a {
+	cursor: pointer;
+}
+
+/* hide menu burger on screen desktop version */
+.mobile-menu-btn {
+	display: none;
+}
+
+/* website header including navigation bar */
+.header-main {
+	width: 100%; /* 80rem=1280px */
+	height: 4.6rem; /* 73px logo height */
+	padding: 0 5rem 0 5rem; /* 5rem=80px, 3.75rem=60px; parameters: top right bottom left */	
+	background-color: slategray;
+	display: flex;
+	justify-content: space-between;  /* shift content to sides */		
+	position: fixed;  /* ------------------------------------------------------------- */ 
+	top: 0;			  /* |  make sure header affixed to screen top during scrolling  | */
+	z-index: 100;     /* ------------------------------------------------------------- */
+	left: 0rem; /* header starts flush with left side of screen */
+}
+/*	background-color: RGB(102, 128, 153); */
+/*	background-color: #1e1e1e; almost black */
+
+.header-main nav {
+	display: flex;
+}
+
+.header-main .logo {
+	width: fit-content;
+	height: 4.6rem; /* 73px logo height */
+	align-self: center;
+	cursor: pointer;
+	background-color: slategray;	
+}
+
+.header-main .logo img {
+	height: 100%;
+		/* LOGO surrounded by slate-gray to match website header colour,                        */
+		/*     thin light-turquoise trim encapsulates rectangular navy-blue box,                */
+		/*     thicker blue-gray trim forms smaller rectangular black box - rounded at edges,   */
+		/*	   white wordprint in Chiller font used for navy-blue box (24pt) & black box (18pt) */ 
+		/* cursor: pointer; */
+}
+
+.header-main .logo img:hover {
+	box-shadow: rgba(112, 146, 190, 1) 0px 0px 0px 3px; /* now blue-gray */
+	transform: translateY(-0.25em);	
+	transition: 0.3s;
+}
+.header-main ul {
+	height: 100%;
+	padding-left: 2.5rem; /* 2.5rem=40px; gap between logo & navigation menu */
+	list-style: none;
+	display: flex;
+	align-self: center; /* place flexbox content in middle along cross-axis (Y-axis for rows in this case) */
+	align-items: center;
+	margin-left: 8rem;	/* push navigation menu items to right side */
+	/*float: left;*/
+}
+
+.header-main ul li a {
+	display: block;
+	padding: 0.3rem 0.9375rem 0.3rem 0.9375rem;  /* 0.9375rem=15px; padding: top right bottom left */
+	height: 70%;  /* create border around anchor to fully display box-shadow & its raising during hover event */
+	line-height: 2.7rem; /* WAS same height as logo to force vertical centering */
+						 /* NOW reduced from 4.6rem to accommodate hover effects */
+	font-family: Arial, Helvetica, sans-serif;
+	font-style: bold;
+	color: white;
+	text-decoration: none;  /* remove underline for anchor */
+	background-color: slategray;
+	cursor: pointer;
+	transition: all ease-in-out 100ms;
+}
+
+.home {
+  border-style: solid;
+  border-width: 0.125rem; /* = 2px */
+  border-color: rgb(0, 0, 128); /* blue-gray */
+}
+
+.header-main ul li a:hover {
+	box-shadow: rgba(112, 146, 190, 1) 0px 0px 0px 3px; /* now blue-gray */
+	/* was rgba(51, 85, 204, 1) blue violet */
+	color: rgb(153, 217, 234); /* light-turquoise=rgb(153, 217, 234) */
+	/* was color: turquoise; */
+	transform: translateY(-0.25em);	
+	transition: 0.3s;	
+}
+
+/* online tutor hides dropdown menu here, code not included */
+
+/*
+.header-main-logo {
+	width: fit-content;
+	height: 100%;
+	background-color: slategray;
+	padding-left: 0;
+	display: flex;		
+}
+.header-main-logo img {
+	align-self: center;
+	cursor: pointer;
+}
+.header-main-logo img:hover{
+	box-shadow: rgba(51, 85, 204, 1) 0px 0px 0px 3px; 
+	color: turquoise;
+	transform: translateY(-0.25em);	
+	transition: 0.3s;
+}
+*/
+/* rgba(51, 85, 204, 1) blue violet */
+/*
+.header-main-nav {
+	width: 62.5rem;
+	height: 100%;
+	background-color: slategray;
+}
+
+.header-main-nav ul {
+	list-style: none;
+	margin-left: 14rem;
+}
+.header-main-nav ul li {
+	display: inline;
+	align-content: center;
+	align-items: center;
+	float: left;
+}
+.header-main-nav ul li a {
+	text-decoration: none;
+	padding: 0 0.625rem 0 0.625rem;
+	font-family: Arial, Helvetica, sans-serif;
+	font-style: bold;
+	line-height: 2.7rem;
+	color: white;
+	display: block;
+	height: 100%;
+}
+*/
+/*	padding: 0   0.625rem 0      0.625rem; */
+/*  padding: top right    bottom left */
+/*	font-size: medium; ??? */
+/*
+.header-main-nav ul li a:hover {
+	box-shadow: rgba(51, 85, 204, 1) 0px 0px 0px 3px; 
+	color: turquoise;
+	transform: translateY(-0.25em);
+		transition: 0.3s;
+}
+*/
+/*  blue violet = rgba(51, 85, 204, 1) */
+/*  turquoise = rgba(64, 224, 208, 1) */
+/*	color: RGB(153, 213, 204); lighter than turquoise */
+/* rgba(3, 102, 214, 0.3); medium blue */
+/*
+.header-main-sm {	
+	width: 1px;
+	height: 100%;
+	background-color: silver;
+	padding-right: 60px;
+}
+*/
+
+@media only screen and (max-width: 37.5 rem){
+	.header-main {
+		display:  none; /* hide desktop header & menu */
+	}
+	.mobile-menu-btn {
+		display: flex;
+		justify-content: center;
+		width: 3.75rem; /* 60px */
+		height: 3.75rem; /* 60px */
+		
+		/* make sure header can go to top right of website screen */
+		position: absolute;
+		top: 0;
+		right: 0;
+		z-index: 200; /* show mobile burger icon */
+		background-color: white;
+	}
+	.mobile-menu-btn img {
+		height: 80%;
+		align-self: center;
+	}
+	.header-main {
+		height: 100vh; /* fit inside device */
+		flex-wrap: wrap;
+		flex-direction: column;
+		padding: 0;
+		justify-content: flex-start;
+	}
+	/* examine classes, diff from previous code */
+	.header-main nav {
+		width: 100%;
+		height: 80vh; 
+		flex-wrap: wrap;
+		flex-direction: column;
+		padding: 0;
+		align-content: stretch;
+	}
+	.header-main .logo {
+		height: 30%; 
+		padding: 0;
+		margin: 0;
+		display: flex;
+		align-items: center;
+	}
+	.header-main .logo img {
+		height: 60%; 
+		align-self: center;
+		cursor: pointer;
+	}	
+	.header-main ul {
+		height: 70%;  /* rest is logo, see above */
+		width: 100%;
+		padding: 0;
+		margin: 0;
+		flex-wrap: wrap;
+		flex-direction: column;
+		align-content: space-between;  /* items split out */	
+	}
+	.header-main ul li {
+		width: 100%;
+		height: calc(100% / var(--menu-count));  /* set up menu-count */
+		padding: 0;
+		margin: 0;
+		/* menu items now have border */
+			border-top: 1px solid #ddd  
+		/* following is accommodation for dropdown menu to go below relative menu item */
+		/*
+			display: flex;
+			flex-wrap: wrap;
+			flex-direction: column;
+			justify-content: center; 
+			transition: all ease-in-out 100ms;
+		*/
+	}
+	.header-main ul li:nth-last-child(1) {		
+		border-bottom: 1px solid #ddd  /* separate from social media section, might not need */
+	}
+	.header-main ul li a {
+		width: 100%;
+		height: fit-content;
+		padding: 0;
+		margin: 0;
+		text-align: center;
+		font-size: 2.5rem; /* 2.5rem = 40px; */
+	}
+	.header-main ul li a:hover {
+		background-color: transparent;  /* turn off desktop hover effect */
+		color: #111;
+	}
+	.header-main nav {
+		overflow-y: scroll;
+		overflow-x: hidden;
+	}
+}
+
+/* content description area */
+.section-body {
+	/* position: relative;	top: 6rem;	left: 5rem; */
+	display: block;
+	width: 100%;
+	padding: 0 5rem 0 5rem; /* 5rem=80px, 3.75rem=60px; parameters: top right bottom left */	
+	margin-top: 6rem;  /* 6rem = 96px; skip past fixed website header (73px) */
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11pt;
+	color: rgb(0, 0, 128); /* navy-blue */
+	font-weight: normal;
+}
+
+/* text section */
+.norm-face{
+	font-weight: normal;
+	font-style: normal; 
+}
+.tilt-face {
+	font-weight: normal;
+	font-style: italic;	
+}
+.bold-face{
+	font-weight: bold;
+	font-style: normal;
+	font-size: 13pt;
+}
+
+/* gallery image collection */
+.container {
+	display: flex;
+	max-width: 100%;
+	max-height: fit-content;
+	/* margin: 0 0 0 0; */
+	justify-content: space-evenly;
+	align-content: normal;  /* distribute along cross-axis: if row-based, then vertical axis Y is cross-axis */
+}	
+.gallery {
+	display: flex;
+	flex-wrap: wrap;
+	padding: 0;
+	margin: 7px 0 7px 0;  /* = 7px */
+		justify-content: center;
+		align-items: normal;
+}
+.gallery img {
+	width: 15.625rem;  /* 15.625rem = 250px; */
+	padding: 0;
+	border: 0.25rem solid slategray;  /* 0.25rem = 4px */
+	margin: 0.625rem;  /* 0.625rem = 10px; 0.5rem = 8px */
+	filter: grayscale(50%);  /* reduce colour rendering by half */
+	transition: .5s;
+}
+.gallery img:hover {
+	filter: grayscale(0%);  /* full colour rendering */
+	transform: translateY(-0.25em);  /* raise item up along Y-axis by 4px = 0.25rem */
+	/*transform: scale(1.02);*/
+	border: 0.25rem solid rgba(239, 170, 44, 1);  /* 0.375rem = 6px */
+}
+/* contact form */
+.contact-body {
+	display: flex;
+	max-width: 100%;
+	max-height: fit-content;
+	justify-content: space-evenly;
+}
+.contact-box {
+	max-width: 350px;  /* 25rem = 400px */
+	/* max-height: fit-content; */
+	padding: 1rem;  /* 1rem = 12px */
+	border: 0.5rem solid rgb(0, 0, 128);  /* 0.5rem = 8px; navy-blue */
+	border-radius: 0.5rem;
+	margin: 0 10rem 0 0;  /* hack fix to make contact-box go to middle */
+		/* top right bottom left; 0.5rem = 8px */ 
+	background-color: #b9d3ee; /* SlateGray2=b9d3ee */
+}
+.contactArea {
+	width: 93%;
+	padding: 0.625rem; /*  0.625rem = 10px */
+	border: 0.135rem solid slategray;  /* 0.135rem = 2px; navy-blue */
+	margin-bottom: 1.5rem;
+	font-size: 11pt;
+}
+#contactMsg {
+	height: 12.5rem;  /* 12.5rem = 200px */
+	text-align: left;
+	font-family: geneva,arial;
+	font-size: 11pt;
+	font-weight: normal;
+}
+.contactBtn {
+	width: 6.25rem;  /* 6.25rem = 100px */
+	border: 0.25rem solid #cc5500; /* 4px; Burnt Orange; */
+	border-radius: 0.25rem; /* 4px */
+	padding: 1.25rem; /*  */
+	font-weight: bold;
+	font-size: 12pt;
+	color: #cc5500;  /* Burnt Orange */
+	background-color: #ffe4c4; /* Bisque1 */
+}
+
+/* ######################################################################################################### */
