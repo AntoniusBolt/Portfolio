@@ -66,20 +66,22 @@
 	<section class="section-body">
 		<div class="contact-body">
 			<div class="contact-box"> 
-				<form action="https://formspree.io/f/xblrpjgl" method="POST">
+				<!-- <form action="https://formspree.io/f/xblrpjgl" method="POST"> -->
+				<form action="https://formsubmit.co/edb53b7b470185788bc2db30e1184245" method="POST" />
 					<h3 class="contactHdr">Hello there!&nbsp;&nbsp;Please drop a line ...</h3>
-					<input class="contactArea" type="text" name="Name" placeholder="Full Name" required />															
-					<input class="contactArea" type="text" name="Email" placeholder="E-mail Address" required />
+					<input class="contactArea" type="text" name="name" placeholder="Full Name" required />															
+					<input class="contactArea" type="email" name="email" placeholder="E-mail Address" required />
 					<!--  -->				
 					<!--<input class="contactArea" id="contactMsg" type="textarea" name="Message" placeholder="Message" required /> -->
-					<textarea class="contactArea" id="contactMsg" name="Message" placeholder="Message" required></textarea>
+					<textarea class="contactArea" id="contactMsg" name="message" placeholder="Message" required></textarea>
 					<br>
 					<button class="contactBtn" type="submit">Send</button>
+					<input type="hidden" name="_next" value="https://anthonyboulton.com/cnthx.html"/>
+					<input type="hidden" name="_captcha" value="false">
 				</form>		
 				<br>		
 				<p class="contactOK">Input validated by third-party <i>Formspree</i>.</p>
-				<p>&nbsp;</p>
-				<input type="hidden" name="_next" value="https://anthonyboulton.com/cnthx.html">
+				<p>&nbsp;</p>				
 			</div>
 		</div>
 		<!-- <br> -->
