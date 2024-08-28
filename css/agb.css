@@ -209,7 +209,7 @@ a {
 	font-size: 11pt;
 }
 #contactMsg {
-	height: 200px;
+	height: 125px; /* WAS 200px, which caused scrolling o/s Contact Box */
 	text-align: left;
 	font-family: geneva,arial;
 	font-size: 11pt;
@@ -321,7 +321,7 @@ a {
 		font-size: 11pt;
 	}
 	#contactMsg {
-		height: 147px;  /* REDUCED from 200px */
+		height: 90px;  /* REDUCED from 150px */
 		text-align: left;
 		font-family: geneva,arial;
 		font-size: 11pt;
@@ -483,7 +483,7 @@ a {
 		font-size: 10pt;  /* REDUCED from 11pt */
 	}
 	#contactMsg {
-		height: 147px;  /* REDUCED from 200px */
+		height: 90px;  /* REDUCED from 150px */
 		text-align: left;
 		font-family: geneva,arial;
 		font-size: 10pt;  /* REDUCED from 11pt */
