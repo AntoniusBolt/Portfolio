@@ -4,7 +4,7 @@
 
 /* variable for number of menu items */
 :root {
-	--menu-count: 5;
+	--menu-count: 6;
 }
 
 /* ######################################################################################################### */
@@ -287,7 +287,7 @@ a {
 			background-color: slategray; /* lightcoral */
 		cursor: pointer;
 		transition: all ease-in-out 100ms;
-	}
+	}	
 	.section-body {
 		/* position: relative;	top: 6rem;	left: 5rem; */
 		display: block;
@@ -360,27 +360,32 @@ a {
 
 /* ######################################################################################################### */
 
-@media only screen and (max-width: 767px){
+@media only screen and (max-width: 767px) {
+	
 	.header-main {
-		display:  none; /* hide desktop header & menu */
+		display:  none;  /* hide desktop header & menu */
 	}
+		
 	.mobile-menu-btn {
+		height: 3.422rem;  /* WAS 3.422rem=54.752px; WAS 3.75rem=60px */
+		width: 3.422rem;   /* WAS 3.422rem=54.752px; WAS 3.75rem=60px */
 		display: flex;
 		justify-content: center;
-		width: 3.75rem; /* 60px */
-		height: 3.75rem; /* 60px */
-		
-		/* make sure header can go to top right of website screen */
-		position: absolute;
+				
+		position: absolute;  /* make sure header goes to top right of screen */
 		top: 0;
 		right: 0;
-		z-index: 200; /* show mobile burger icon */
+		z-index: 200;  /* show mobile burger icon, make sure on top of other images */
 		background-color: white;
 	}
+	
 	.mobile-menu-btn img {
-		height: 80%;
+		height: 65%; 
 		align-self: center;
 	}
+	
+	/* MENU-BTN IMG height 65%: so that image does not fill its header background */
+
 	.header-main {
 		height: 100vh; /* fit inside device */
 		flex-wrap: wrap;
@@ -391,27 +396,30 @@ a {
 	/* examine classes, diff from previous code */
 	.header-main nav {
 		width: 100%;
-		height: 80vh; 
+		height: 100%; /* could reduce this to allow for social media */
 		flex-wrap: wrap;
 		flex-direction: column;
 		padding: 0;
 		align-content: stretch;
 	}
 	.header-main .logo {
-		height: 30%; 
+		height: 20%;  /* rest of header nav bar is then 80% */
 		padding: 0;
 		margin: 0;
 		display: flex;
 		align-items: center;
 	}
 	.header-main .logo img {
-		height: 60%; 
+		height: 100%; 
 		align-self: center;
 		cursor: pointer;
 	}	
+	.header-main .logo img:hover {
+		box-shadow: rgba(112, 146, 190, 1) 0px 0px 0px 5px;  /* blue-gray; INCREASED border 3px=> 5px */
+	}
 	.header-main ul {
-		height: 70%;  /* rest is logo, see above */
-		width: 100%;
+		height: 80%;  /* rest is logo, see above */
+		width: 83%;  /* REDUCED from 100% to reveal border of menu item */
 		padding: 0;
 		margin: 0;
 		flex-wrap: wrap;
@@ -422,10 +430,10 @@ a {
 		width: 100%;
 		height: calc(100% / var(--menu-count));  /* set up menu-count */
 		padding: 0;
-		margin: 0;
-		/* menu items now have border */
-			border-top: 1px solid #ddd  
-		/* following is accommodation for dropdown menu to go below relative menu item */
+		margin: 0;		
+		border-top: 1px solid transparent;  /* menu items now have border, will make transparent */
+
+		/* NOTE: following is accommodation for dropdown menu to go below relative menu item */
 		/*
 			display: flex;
 			flex-wrap: wrap;
@@ -434,20 +442,23 @@ a {
 			transition: all ease-in-out 100ms;
 		*/
 	}
+	/*
+	 separate from social media section, might not need, creates border after last nav menu item
 	.header-main ul li:nth-last-child(1) {		
-		border-bottom: 1px solid #ddd  /* separate from social media section, might not need */
+		border-bottom: 1px solid #ddd
 	}
+	*/	
 	.header-main ul li a {
 		width: 100%;
 		height: fit-content;
 		padding: 0;
 		margin: 0;
 		text-align: center;
-		font-size: 2.5rem
+		font-size: 2.25rem;
 	}
 	.header-main ul li a:hover {
-		background-color: transparent;  /* turn off desktop hover effect */
-		color: #111;
+		box-shadow: rgba(112, 146, 190, 1) 0px 0px 0px 5px; /* blue-gray; INCREASED border 3px=> 5px */
+		background-color: transparent;  /* turn off desktop hover effect */				
 	}
 	.header-main nav {
 		overflow-y: scroll;
@@ -457,7 +468,7 @@ a {
 		/* position: relative;	top: 6rem;	left: 5rem; */
 		display: block;
 		width: 100%;
-		padding: 0 0.125rem 0 0.125rem; /* REDUCED from 5rem, 1.25rem=20px; parameters: top right bottom left */	
+		padding: 0 1.25rem 0 1.25rem; /* REDUCED from 5rem, 1.25rem=20px; parameters: top right bottom left */	
 		margin-top: 4.5rem;  /* REDUCED 25% from 6rem = 96px; skip past fixed website header (73px) */
 		font-family: Arial, Helvetica, sans-serif;
 		font-size: 9pt; /* REDUCED from 11pt */
