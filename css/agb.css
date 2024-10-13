@@ -2,10 +2,61 @@
 /* online portfolio cascading style sheet */
 /* ************************************** */
 
-/* variable for number of menu items */
-:root {
-	--menu-count: 6;
+
+/* reset universal selectors */
+*{
+	/* margin: 0; YUP */
+	/* padding: 0; */
+	/* box-sizing: border-box; YUP */
+	font-family: Arial, Helvetica, sans-serif;
 }
+
+
+/* global variables and constants */
+:root {
+	/* number of navigation menu items for mobile viewport */
+	--mbl-menu-count: 7;  /* doesn't include logo which is hidden in main navigation */
+
+	/* site header background colors by device (mostly); slategray=#708090 */
+	--hdr-bg-logo-color: navy;  /* LITTLE EFFECT because bg color embedded in logo */
+	--hdr-bg-dsk-color: navy;  
+	--hdr-bg-sml-color: navy;  
+	--hdr-bg-tab-color: navy;  
+	--hdr-bg-mbl-color: navy;
+	--hdr-bg-mbl-btn-color: slategray;
+
+	/* site trim colors for picture frames and input boxes */
+	--bdr-img-color: rgba(51, 85, 204, 1);  /* blue violet */
+	--bdr-hvr-img-color:rgba(239, 170, 44, 1); /* orange-y */
+	--bdr-msg-color: rgba(112, 146, 190, 1);  /* WAS slategray, now blue-gray */
+
+	/* navigation link colors for text and their selection */
+	--nav-txt-color: white;
+	--nav-mbl-txt-color: navy;
+	--nav-hvr-box-color: rgba(112, 146, 190, 1);  /* blue-gray */
+	--nav-hvr-txt-color: rgb(153, 217, 234); /* light turquoise */
+	--nav-mbl-hvr-bg-color: rgb(153, 217, 234); /* light turquoise */
+	--nav-mbl-hvr-txt-color: rgba(51, 85, 204, 1);  /* blue violet */
+	--nav-mbl-hvr-box-color: rgb(153, 217, 234); /* light turquoise */	
+	--btn-hvr-box-color: rgba(51, 85, 204, 1);  /* blue violet */
+
+	/* navigation link colors for current web page, the "Home Link" */
+	--nav-home-bdr-color: rgb(153, 217, 234); /* light turquoise */
+	--nav-home-bg-color: rgba(51, 85, 204, 1);  /* blue violet */
+
+	/* site content background colors by device */
+	--scr-bg-dsk-color: rgb(120, 175, 177);  /* see below */
+	--scr-bg-sml-color: rgb(120, 175, 177);  /* see below */
+	--scr-bg-tab-color: rgb(120, 175, 177);  /* see below */
+	--scr-bg-mbl-color: rgb(120, 175, 177);  /* lighter shade of cadetblue, rgb(95, 158, 160) or #5F9EA0 */
+	
+	/* animated mobile toggle icon variables */
+	--toggle-height: calc(var(--bar-height) * 3 + var(bar-margin) * 2);  /* [WDS] total burger height */
+	--toggle-margin: 5px;
+	--bar-height: 3px;
+	--bar-width: 25px;
+	--bar-margin: 5px;
+	}
 
 /* ######################################################################################################### */
 
@@ -16,7 +67,7 @@
 }
 .tilt-face {
 	font-weight: normal;
-	font-style: italic;	
+	font-style: italic;
 }
 .bold-face{
 	font-weight: bold;
@@ -26,12 +77,12 @@
 
 /* website credits */
 #cByline {
-	background-color: silver;
+	background-color: transparent;
 	color: rgba(51, 85, 204, 1);
 	font-family: geneva,arial;
 	font-size: 10pt;
 	font-weight: normal;
-		text-align: center;
+	text-align: center;
 }
 
 /* ######################################################################################################### */
@@ -39,7 +90,7 @@
 /* main area of website */
 body{
 	/* note: "left: 0rem;" eliminates small margin on screen left */
-	background-color: silver;
+	background-color: var(--scr-bg-dsk-color);
 }
 
 /* anchor tags */
@@ -47,10 +98,19 @@ a {
 	cursor: pointer;
 }
 
-/* hide menu burger on screen desktop version */
+/* hide menu logo & burger on screen desktop version */	
+.mobile-menu {
+	display: none;
+}	
+/*	
+.mobile-menu-logo {
+	display: none;
+}	
 .mobile-menu-btn {
 	display: none;
 }
+*/	
+
 /* ######################################################################################################### */
 
 /* website header including navigation bar */
@@ -59,7 +119,7 @@ a {
 	width: 100%; /* 80rem=1280px */
 	height: 4.6rem; /* ~ 73px logo height */
 	padding: 0 5rem 0 5rem; /* 5rem=80px; parameters: top right bottom left */	
-	background-color: slategray; /* #708090 */
+	background-color: var(--hdr-bg-dsk-color);
 	display: flex;
 	justify-content: space-between;  /* shift content to sides */		
 	position: fixed;  /* ------------------------------------------------------------- */ 
@@ -67,21 +127,16 @@ a {
 	z-index: 100;     /* ------------------------------------------------------------- */
 	left: 0rem; /* header starts flush with left side of screen */
 }
-/*	background-color: RGB(102, 128, 153); */
-/*	background-color: #1e1e1e; almost black */
-
 .header-main nav {
 	display: flex;
 }
-
 .header-main .logo {
 	width: fit-content;
 	height: 4.6rem; /* ~ 73px logo height */
 	align-self: center;
 	cursor: pointer;
-	background-color: slategray;	
+	background-color: var(--hdr-bg-logo-color);
 }
-
 .header-main .logo img {
 	height: 100%;
 		/* LOGO surrounded by slate-gray to match website header colour,                        */
@@ -90,9 +145,8 @@ a {
 		/*	   white wordprint in Chiller font used for navy-blue box (24pt) & black box (18pt) */ 
 		/* cursor: pointer; */
 }
-
 .header-main .logo img:hover {
-	box-shadow: rgba(112, 146, 190, 1) 0px 0px 0px 3px; /* now blue-gray */
+	box-shadow: var(--nav-hvr-box-color) 0px 0px 0px 3px;
 	transform: translateY(-0.25em);	
 	transition: 0.3s;
 }
@@ -106,7 +160,6 @@ a {
 	margin-left: 8rem;	/* push navigation menu items to right side */
 	/*float: left;*/
 }
-
 .header-main ul li a {
 	display: block;
 	padding: 0.3rem 0.9375rem 0.3rem 0.9375rem;  /* 0.9375rem=15px; padding: top right bottom left */
@@ -114,25 +167,22 @@ a {
 	line-height: 2.7rem; /* WAS same height as logo to force vertical centering */
 						 /* NOW reduced from 4.6rem to accommodate hover effects */
 	font-family: Arial, Helvetica, sans-serif;
-	font-style: bold;
-	color: white;
+	font-weight: normal;
+	color: var(--nav-txt-color);
 	text-decoration: none;  /* remove underline for anchor */
-	background-color: slategray;
 	cursor: pointer;
 	transition: all ease-in-out 100ms;
 }
-
-.home {
-  border-style: solid;
-  border-width: 0.125rem; /* = 2px */
-  border-color: rgb(0, 0, 128); /* blue-gray */
+#HomeLink {
+	font-weight: normal;
+	border-style: solid;
+	border-width: 0.125rem; /* = 2px */
+	border-color: var(--nav-home-bdr-color);
+	background-color: var(--nav-home-bg-color); 
 }
-
 .header-main ul li a:hover {
-	box-shadow: rgba(112, 146, 190, 1) 0px 0px 0px 3px; /* now blue-gray */
-	/* was rgba(51, 85, 204, 1) blue violet */
-	color: rgb(153, 217, 234); /* light-turquoise=rgb(153, 217, 234) */
-	/* was color: turquoise; */
+	box-shadow: var(--nav-hvr-box-color) 0px 0px 0px 3px;
+	color: var(--nav-hvr-txt-color);
 	transform: translateY(-0.25em);	
 	transition: 0.3s;	
 }
@@ -144,14 +194,13 @@ a {
 
 /* ######################################################################################################### */
 
-
 /* content description area */
 .section-body {
 	/* position: relative;	top: 6rem;	left: 5rem; */
 	display: block;
 	width: 100%;
 	padding: 0 5rem 0 5rem; /* 5rem=80px, 3.75rem=60px; parameters: top right bottom left */	
-	margin-top: 6rem;  /* 6rem = 96px; skip past fixed website header (73px) */
+	margin-top: 6.5rem;  /* 6.5rem=nnpx; WAS 4.6rem=73.6px; skip past fixed website header (73px) */
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 11pt;
 	color: rgb(0, 0, 128); /* navy-blue */
@@ -172,69 +221,116 @@ a {
 	flex-wrap: wrap;
 	padding: 0;
 	margin: 7px 0 7px 0;  /* = 7px */
-		justify-content: center;
-		align-items: normal;
+	justify-content: center;
+	align-items: normal;
 }
 .gallery img {
-	width: 15.625rem;  /* 15.625rem = 250px; */
+	width: 15.625rem;  /* 15.625rem=250px; */
 	padding: 0;
-	border: 0.25rem solid slategray;  /* 0.25rem = 4px */
-	margin: 0.625rem;  /* 0.625rem = 10px; 0.5rem = 8px */
-	filter: grayscale(50%);  /* reduce colour rendering by half */
+	border: 0.2rem solid var(--bdr-img-color);  /* 0.2rem=3.2px */
+	border-radius: 0.2rem;
+	margin: 0.625rem;  /* 0.625rem=10px; 0.5rem=8px */
+	/* filter: grayscale(50%);  reduce colour rendering by half */
 	transition: .5s;
 }
 .gallery img:hover {
-	filter: grayscale(0%);  /* full colour rendering */
-	transform: translateY(-0.25em);  /* raise item up along Y-axis by 4px = 0.25rem */
-	/*transform: scale(1.02);*/
-	border: 0.25rem solid rgba(239, 170, 44, 1);  /* 0.375rem = 6px */
+	/* filter: grayscale(0%);  full colour rendering */
+	transform: translateY(-0.2rem);  /* raise item up along Y-axis by 0.2rem=3.2px; */
+	border: 0.2rem solid var(--bdr-hvr-img-color);  /* 0.2rem=3.2px; */
 }
+
 /* contact form */
-.contact-box {
-	display: block;
-	/*	flex-wrap: nowrap; */
-	max-width: 325px;  /* WAS 100% - unmanageable with device change */
+.contact-body {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;  /* distribute along main-axis; if row-based, horizontal axis X is main-axis */
+	align-items: center;  /* distribute along cross-axis: if row-based, vertical axis Y is cross-axis */
+	align-content: center;  /* control space between items on cross-axis */
+	max-width: 100%;
 	max-height: fit-content;
-	padding: 1rem;  /* 1rem = 12px */
-	border: 0.5rem solid rgb(0, 0, 128);  /* 0.5rem = 8px; navy-blue */
+	gap: 2rem;  /* 2rem=32px; put space between flex items */
+}
+.contact-box {
+	/* display: flex;	*/
+	/* display: block; */
+	/* flex-wrap: nowrap; */
+	width: 325px;  /* WAS 100% - unmanageable with device change; WAS max-width: 325px */
+	height: 425px;  /* WAS max-height: fit-content */
+	padding: 1rem;  /* 1rem=16px */
+	border: 0.5rem solid rgb(0, 0, 128);  /* 0.5rem=8px; navy-blue */
 	border-radius: 0.5rem;
-	margin: 5rem 0 5rem 0; /* 2.5rem = 40px; 0.5rem = 8px */
-	background-color: #b9d3ee; /* SlateGray2=b9d3ee; Pale Aqua=bcd4e6; LightSteelBlue2=bcd2ee; */
+	margin: 0.5rem 0 0.5rem 0; /* 0.5rem=8px; 2.5rem=40px; parameters: top right bottom left */
+	background-color: #b9d3ee; /* Pale Aqua=bcd4e6; LightSteelBlue2=bcd2ee; */
+}
+.contact-box  button:hover {
+	box-shadow: var(--btn-hvr-box-color) 0px 0px 0px 3px;
+	color: rgba(51, 85, 204, 1);  /* blue violet */
+	transform: translateY(-0.25em);	
+	transition: 0.3s;
 }
 .contactArea {
 	width: 300px;
-	padding: 0.625rem; /*  */
-	border: 0.135rem solid slategray;  /* 0.135rem = 2px; navy-blue */
-	margin-bottom: 1.5rem;
+	padding: 0.625rem;  /* 0.625rem=10px */
+	border: 0.135rem solid var(--bdr-msg-color);  /* 0.135rem=2px */
+	margin-bottom: 1.5rem;  /* 1.5rem=24px */
 	font-size: 11pt;
 }
 #contactMsg {
-	height: 125px; /* WAS 200px, which caused scrolling o/s Contact Box */
+	height: 150px;  /* WAS 200px, which caused scrolling o/s Contact Box */
 	text-align: left;
 	font-family: geneva,arial;
 	font-size: 11pt;
 	font-weight: normal;
 }
+.contactHdr {
+	width: 300px;
+	padding: 0; /*  */
+	align-items: center;  /* distribute along cross-axis: if row-based, vertical axis Y is cross-axis */
+	align-content: center;  /* control space between items on cross-axis */
+	font-size: 14pt;
+}
+.contactThx {	
+	width: 325px;
+	padding-left: 6rem;  /* 6rem=96px */
+	padding-top: 5rem;  /* 5rem=80px */
+	font-size: 14pt;
+}
+.contactOK {	
+	width: 325px;
+	padding-left: 6rem;  /* 6rem=96px */
+	padding-top: 5rem;  /* 5rem=80px */
+	font-size: 12pt;
+}
 .contactBtn {
-	width: 100px;
+	width: 80px;
+	height: 40px;
 	border: 0.25rem solid #cc5500; /* 4px; Burnt Orange; */
 	border-radius: 0.25rem; /* 4px */
-	padding: 1.25rem; /*  */
+	padding: 0.5rem;  /* WAS 1.25rem */
 	font-weight: bold;
 	font-size: 12pt;
 	/* color: #e34234;  cinnibar */
 	color: #cc5500;  /* Burnt Orange */
 	background-color: #ffe4c4; /* Bisque1 */
 }
+.contact-pic {
+	height: 450px;
+	padding: 0;
+	border: 0.25rem solid var(--bdr-img-color);  /* 0.25rem=4px; */
+	border-radius: 0.25rem;	
+}
 
 /* ######################################################################################################### */
 
 /* larger tablets, small desktops ------------------------------------------ */
 @media only screen and (min-width : 1023px) and (max-width : 1280px) {
+	body {
+		background-color: var(--scr-bg-sml-color);
+	}
 	.header-main ul {
 		height: 100%;
 		padding-left: 1rem; /* REDUCED from 2.5rem=40px; gap between logo & navigation menu */
-			background-color: slategray; /* yellowgreen */
+		background-color: var(--hdr-bg-sml-color);
 		margin-left: 0;	/* push navigation menu items to right side */
 	}
 }
@@ -245,13 +341,13 @@ a {
 @media only screen and (min-width : 768px) and (max-width : 1024px) {
 	body{
 		/* note: "left: 0rem;" eliminates small margin on screen left */
-			background-color: silver; /* pink */
+			background-color: var(--scr-bg-tab-color); /* testing WAS pink */
 	}
 	.header-main {
 		width: 100%; /* 80rem=1280px */
 		height: 3.422rem; /* REDUCED 25% from 4.6rem~73px logo height */
 		padding: 0 0.125rem 0 0.125rem; /* REDUCED from 5rem=80px; parameters: top right bottom left */	
-			background-color: slategray; /* turquoise; #708090 */
+		background-color: var(--hdr-bg-tab-color);
 		display: flex;
 		justify-content: space-between;  /* shift content to sides */		
 		position: fixed;  /* ------------------------------------------------------------- */ 
@@ -264,12 +360,11 @@ a {
 		height: 3.422rem; /* REDUCED 25% from 4.6rem~73px logo height */
 		align-self: center;
 		cursor: pointer;
-		background-color: slategray;	/* yellow */
+		background-color: var(--hdr-bg-logo-color);
 	}
 	.header-main ul {
 		height: 100%;
 		padding-left: 0; /* REDUCED from 2.5rem=40px; gap between logo & navigation menu */
-			background-color: slategray; /* yellowgreen */
 		margin-left: 0;	/* push navigation menu items to right side */
 	}
 	.header-main ul li a {
@@ -282,9 +377,8 @@ a {
 		font-family: Arial, Helvetica, sans-serif;
 		font-style: bold;
 		font-size: 9pt; /* ADDED */
-		color: white;
+		color: var(--nav-txt-color);
 		text-decoration: none;  /* remove underline for anchor */
-			background-color: slategray; /* lightcoral */
 		cursor: pointer;
 		transition: all ease-in-out 100ms;
 	}	
@@ -293,7 +387,7 @@ a {
 		display: block;
 		width: 100%;
 		padding: 0 0.125rem 0 0.125rem; /* REDUCED from 5rem, 1.25rem=20px; parameters: top right bottom left */	
-		margin-top: 4.5rem;  /* REDUCED 25% from 6rem = 96px; skip past fixed website header (73px) */
+		margin-top: 4.85rem;  /* 4.85rem=77.6px; WAS 4.1rem; skip past fixed website header (73px) */
 		font-family: Arial, Helvetica, sans-serif;
 		font-size: 10pt; /* REDUCED from 11pt */
 		color: rgb(0, 0, 128); /* navy-blue */
@@ -302,51 +396,82 @@ a {
 	.gallery {
 		margin: 2px 0 2px 0;  /* REDUCED from 7px */
 	}
+
+	/* contact form */
+	.contact-body {
+		display: flex;
+		flex-direction: row;
+		justify-content: flex-start;  /* distribute along main-axis; if row-based, horizontal axis X is main-axis */
+		align-items: center;  /* distribute along cross-axis: if row-based, vertical axis Y is cross-axis */
+		align-content: center;  /* control space between items on cross-axis */
+		max-width: 100%;
+		max-height: fit-content;		
+		gap: 1.75em;  /*  1.75rem=28px; put space between flex items  */
+	}
 	.contact-box {
-		display: block;
-		/*	flex-wrap: nowrap; */
-		max-width: 243.75px;  /* REDUCED 25% from 325px */
-		max-height: fit-content;
-		padding: 1rem;  /* 1rem = 12px */
-		border: 0.5rem solid rgb(0, 0, 128);  /* 0.5rem = 8px; navy-blue */
+		/* display: block; */
+		/* flex-wrap: nowrap; */
+		width: 243.75px;  /* REDUCED 25% from 325px; width WAS max-width */
+		height: 318.75px;  /* REDUCED 25% from 425px; height WAS max-height */
+		padding: 0.75rem;  /* WAS 1rem=16px, now 0.75rem=12px */
+		border: 0.5rem solid rgb(0, 0, 128);  /* 0.5rem=8px; navy-blue */
 		border-radius: 0.5rem;
-		margin: 5rem 0 5rem 0; /* 2.5rem = 40px; 0.5rem = 8px */
-		background-color: #b9d3ee; /* SlateGray2=b9d3ee; Pale Aqua=bcd4e6; LightSteelBlue2=bcd2ee; */
+		margin: 0.3rem 0 0.3rem 0; /* 0.3rem=4.8px; 0.5rem=8px; parameters: top right bottom left */
+		background-color: #b9d3ee; /* Pale Aqua=bcd4e6; LightSteelBlue2=bcd2ee; */
 	}
 	.contactArea {
 		width: 220px;  /* REDUCED from 300px */
 		padding: 0.625rem; /*  */
-		border: 0.135rem solid slategray;  /* 0.135rem = 2px; navy-blue */
-		margin-bottom: 1.5rem;
-		font-size: 11pt;
+		border: 0.135rem solid var(--bdr-msg-color);  /* 0.135rem=2px */
+		margin-bottom: 1.12rem;  /* REDUCED 25% from 1.5rem=24px */
+		font-size: 10pt;  /* WAS 11pt */
 	}
 	#contactMsg {
-		height: 90px;  /* REDUCED from 150px */
+		height: 85px;  /* REDUCED from 90px */
 		text-align: left;
 		font-family: geneva,arial;
-		font-size: 11pt;
+		font-size: 10pt;  /* WAS 11pt */
 		font-weight: normal;
 	}
 	.contactHdr {
 		font-size: 11pt;
 	}
+	.contactThx {	
+		width: 243.75px;  /* REDUCED 25% from 325px */
+		padding-left: 4.5rem;  /* WAS 6rem=96px, down 25% */
+		padding-top: 3.75rem;  /* WAS 5rem=80px, down 25% */
+		font-size: 12pt;  /* REDUCED from 14pt */
+	}
 	.contactOK {
-		font-size: 10pt;
+		width: 243.75px;  /* REDUCED 25% from 325px */
+		padding-left: 4.5rem;  /* WAS 6rem=96px, down 25% */
+		padding-top: 3.75rem;  /* WAS 5rem=80px, down 25% */		
+		font-size: 10pt;  /* REDUCED from 12pt */
 	}
 	.contactBtn {
-		width: 75px;  /* REDUCED from 100px */
+		width: 60px;  /* REDUCED from 75px */
+		height: 30px;  /* NEW */
 		border: 0.125rem solid #cc5500; /* REDUCED from 0.25=4px; Burnt Orange; */
 		border-radius: 0.125rem; /* REDUCED from 0.25=4px */
-		padding: 0.9375rem;  /* REDUCED 25% from 1.25rem */
+		padding: 0.25rem;  /* REDUCED from 1.25rem 0.25rem, now shrinks from 0.5rem */
 		font-weight: bold;
-		font-size: 11pt; /* REDUCED from 12pt */
+		font-size: 10pt; /* REDUCED from 11pt */
 		/* color: #e34234;  cinnibar */
 		color: #cc5500;  /* Burnt Orange */
 		background-color: #ffe4c4; /* Bisque1 */
 	}
+	.contact-pic {
+		height: 337.5px;  /* REDUCED 25% from 450px */
+		padding: 0;
+		border: 0.25rem solid var(--bdr-img-color);  /* 0.25rem=4px; */
+		border-radius: 0.25rem;	
+	}
+	.contact-pic img {
+		height: 337.5px;  /* REDUCED 25% from 450px */
+	}
 	#cByline {
 		/*
-		background-color: silver;
+		background-color: transparent;
 		color: rgba(51, 85, 204, 1);
 		font-family: geneva,arial;
 		*/
@@ -361,65 +486,190 @@ a {
 /* ######################################################################################################### */
 
 @media only screen and (max-width: 767px) {
-	
+	body{
+		background-color: var(--scr-bg-mbl-color);
+	}
+
 	.header-main {
 		display:  none;  /* hide desktop header & menu */
 	}
 		
+	.mobile-menu {
+		height: 3.422rem;  /* WAS 3.422rem=54.752px; WAS 3.75rem=60px */
+		width: 100%;       /* WAS 3.422rem=54.752px; WAS 3.75rem=60px */
+		display: flex;  /* SHOW mobile logo & button */
+		justify-content: center;
+		left: 0;
+		position: fixed;
+		top: 0;	
+		z-index: 1000;
+		background-color: var(--hdr-bg-mbl-color);
+	}
+	.mobile-menu-logo {
+		height: 3.422rem;
+		align-self: center;
+		display: flex;  /* SHOW mobile logo & button */
+		justify-content: center;
+		left: 2px;   	  /* ------------------------------------------------------------- */ 
+		position: fixed;  /* |  make sure header affixed to screen top during scrolling  | */
+		top: 0;			  /* ------------------------------------------------------------- */
+		/* z-index: 1000; nothing happened */
+		background-color: transparent;
+	}
+	.mobile-menu-logo img {
+		height: 100%;
+	}
+	.mobile-menu-logo img:hover {
+		box-shadow: var(--nav-hvr-box-color) 0px 0px 0px 3px;
+		transform: translateY(-0.25em);	
+		transition: 0.3s;
+	}
+	/* initial WORKING version of mobile toggle using single icon; NOT USED */
 	.mobile-menu-btn {
 		height: 3.422rem;  /* WAS 3.422rem=54.752px; WAS 3.75rem=60px */
-		width: 3.422rem;   /* WAS 3.422rem=54.752px; WAS 3.75rem=60px */
+		width: 3.422rem;   /* WAS 3.422rem=54.752px; WAS 3.75rem=60px */		
 		display: flex;
-		justify-content: center;
-				
+		justify-content: center;		
+		/* top 4 lines moved to mobile-menu */				
 		position: absolute;  /* make sure header goes to top right of screen */
-		top: 0;
-		right: 0;
-		z-index: 200;  /* show mobile burger icon, make sure on top of other images */
-		background-color: white;
+		top: 0px;
+		right: 0px;
+		z-index: 1000;  /* show mobile burger icon, make sure on top of other images */
+		background-color: transparent;
+		cursor: pointer;
 	}
-	
+	/* initial WORKING version of mobile toggle using single icon; NOT USED */
 	.mobile-menu-btn img {
-		height: 65%; 
-		align-self: center;
+		height: 65%;  /* ensure border exists around burger patties */
+		width: 65%;   /* ensure border exists around burger patties */ 
+		align-self: center;		
 	}
-	
-	/* MENU-BTN IMG height 65%: so that image does not fill its header background */
+	/* second attempt at mobile toggle for burger & cross icons; UNSUCCESSFUL */
+	/*
+	.mobile-toggle-btn {
+		height: 3.422rem;
+		width: 3.422rem;
+		display: FLEX;
+		justify-content: center;
+		
+		position: absolute;
+		top: 0px;
+		right: 0px;
+		z-index: 1000;  
+		background-color: transparent;
+		cursor: pointer;
+	}
+	.mobile-toggle-btn img {
+		height: 65%;  
+		width: 65%;   
+		align-self: center;		
+	}
+	*/
+	/* animated toggle button between burger (open menu) and cross (close menu) icons */
+	.mobile-toggle {
+		/* [WDS] prepare for toggle/icon animation, find "x" length by multiplying by square toot of 2 */
+		/*    Attempting to calculate Y-axis movement after 45 degree rotation.
+		      Currently hardcoded 8px for translateY parameter (given 25px height & width.  FAILED so far.
+		--x-width: calc(var(--toggle-height)* 1.414213562373095);
+		--bar-hypoteneuse: calc((var(--bar-height) * 2) + (var(--bar-width) * 2)) * 1.414213562373095;
+		--bar-translateY: calc(var(--bar-hypoteneuse) - (var(--bar-height) / 2))
+		*/			
+		height: var(--toggle-height);
+		width: var(--bar-width);
+		border-style: solid;                        
+		border-width: 2px;                            
+		border-color: var(--nav-hvr-txt-color);
+		/* border-radius: 9999px; [WDS] rounds toggle border into ellipse */
+		display: block;
+		position: absolute;  /* make sure header goes to top right of screen */
+		top: var(--toggle-margin);
+		right: calc(var(--toggle-margin) + 1px);
+		padding: 6px 6px 5.5px 6px;  /* top right bottom left */
+		cursor: pointer;
+		background-color: var(--nav-home-bg-color);
+		justify-self: center;
+	}
+	.mobile-toggle:hover {
+		background-color: var(--btn-hvr-box-color);
+	}
+	.mobile-bar {
+		display: block;
+		position: relative;
+		width: var(--bar-width);
+		height: var(--bar-height);
+		margin: var(--bar-margin) auto;
+		-webkit-transition: all 0.3s ease-in-out;
+		transition: all 0.3s ease-in-out;
+		background-color: var(--nav-txt-color);
+		border-radius: 9999px;  /* [WDS] rounds bar edge */
+		/* transform-origin: left center;  [WDS] pivot point */		
+	}
+	/* ****** only changes single selected bar ******
+	 .mobile-bar:hover {
+		background-color: var(--nav-hvr-txt-color);
+	}  **********************************************
+	*/
+	.mobile-toggle.active .mobile-bar:nth-child(2) {
+		opacity: 0;  /* hide middle burger bar */
 
+	}
+	.mobile-toggle.active .mobile-bar:nth-child(1) {
+		/* shift top bar down 8px and rotate 45 degrees clockwise */
+		transform: translateY(8px) rotate(45deg);
+		/* transform: translateY(calc(var(--bar-translateY))) rotate(45deg); */
+		    /* PRIOR transform: translateY(calc(var(--bar-height) / -2)) rotate(45deg); unPIVOTED failed */
+	}
+	.mobile-toggle.active .mobile-bar:nth-child(3) {
+		/* shift bottom up 8px and rotate 45 degrees counter-clockwise */
+		transform: translateY(-8px) rotate(-45deg);
+		/* transform: translateY(calc(var(--bar-translateY) * -1)) rotate(-45deg); */
+			/* PRIOR transform: translateY(calc(var(--bar-height) / 2)) rotate(-45deg); unPIVOTED failed */
+	}
+	/* responsive design for site navigation */
 	.header-main {
 		height: 100vh; /* fit inside device */
 		flex-wrap: wrap;
 		flex-direction: column;
-		padding: 0;
+		padding-top: 125px;  /* get past fixed header */
 		justify-content: flex-start;
+		background-color: var(--scr-bg-mbl-color);
 	}
+
+	.header-main.active {
+		display:  flex;
+	}
+
 	/* examine classes, diff from previous code */
 	.header-main nav {
 		width: 100%;
 		height: 100%; /* could reduce this to allow for social media */
 		flex-wrap: wrap;
 		flex-direction: column;
-		padding: 0;
+		padding-left: -20px;
 		align-content: stretch;
+
 	}
 	.header-main .logo {
-		height: 20%;  /* rest of header nav bar is then 80% */
-		padding: 0;
-		margin: 0;
-		display: flex;
-		align-items: center;
+		/* height: 0;  WAS 20% */
+		/* padding: 0; */
+		/* margin: 0; */
+		/* display: FLEX; */
+		/* align-items: center; */
+		display: none;  /* hide logo on navigation links */
 	}
+	/*
 	.header-main .logo img {
 		height: 100%; 
 		align-self: center;
 		cursor: pointer;
 	}	
 	.header-main .logo img:hover {
-		box-shadow: rgba(112, 146, 190, 1) 0px 0px 0px 5px;  /* blue-gray; INCREASED border 3px=> 5px */
+		box-shadow: var(--nav-hvr-box-color) 0px 0px 0px 5px;
 	}
+	*/
 	.header-main ul {
-		height: 80%;  /* rest is logo, see above */
-		width: 83%;  /* REDUCED from 100% to reveal border of menu item */
+		height: 100%; 
+		width: 100%;  
 		padding: 0;
 		margin: 0;
 		flex-wrap: wrap;
@@ -427,11 +677,11 @@ a {
 		align-content: space-between;  /* items split out */	
 	}
 	.header-main ul li {
-		width: 100%;
-		height: calc(100% / var(--menu-count));  /* set up menu-count */
+		width: 300px;  /* REDUCED from 100% so selected item does not appear so wide */
+		height: calc(100% / var(--mbl-menu-count));  /* determine each navigation link height from number of links */
 		padding: 0;
 		margin: 0;		
-		border-top: 1px solid transparent;  /* menu items now have border, will make transparent */
+		border-top: 1px solid transparent;  /* menu items now have border, will make see thru */
 
 		/* NOTE: following is accommodation for dropdown menu to go below relative menu item */
 		/*
@@ -455,71 +705,138 @@ a {
 		margin: 0;
 		text-align: center;
 		font-size: 2.25rem;
+		color: var(--nav-mbl-txt-color);
+	}
+	#HomeLink {
+		font-weight: normal;
+		/* RESET stylings for mobile viewport */
+		border-style: none;                        
+		border-width: 0;                            
+		border-color: unset; 
+		background-color: transparent;
+		text-decoration-line: underline;
+		text-decoration-color: var(--nav-mbl-txt-color);           
 	}
 	.header-main ul li a:hover {
-		box-shadow: rgba(112, 146, 190, 1) 0px 0px 0px 5px; /* blue-gray; INCREASED border 3px=> 5px */
-		background-color: transparent;  /* turn off desktop hover effect */				
+		color: var(--nav-mbl-hvr-txt-color);
+		/* box-shadow: var(--nav-mbl-hvr-txt-color) 0px 0px 0px 2px;  REMOVED for mobile viewport */
+		box-shadow: 0;
+		background-color: var(--nav-mbl-hvr-bg-color);
+		/* transform: translateY(-0.0625em);  REMOVED for mobile viewport */
+		transform: none;
+		/* transition: 0.3s;  REMOVED for mobile viewport */
+		border-style: solid;                        
+		border-width: 2px;                            
+		border-color: var(--nav-mbl-hvr-txt-color);
+	}
+	#HomeLink:hover {
+		/* sits on top of previous hover action of unordered list item; changes underline colour */
+		box-shadow: 0;
+		background-color: var(--nav-mbl-hvr-bg-color);
+		text-decoration-color: var(--nav-mbl-hvr-txt-color);
+		border-style: solid;                        
+		border-width: 2px;                            
+		border-color: var(--nav-mbl-hvr-txt-color);
 	}
 	.header-main nav {
 		overflow-y: scroll;
 		overflow-x: hidden;
+		/* left: -100%; */
 	}
+	/*
+	.header-main nav.active {
+		left: 0;
+	}
+	*/
 	.section-body {
 		/* position: relative;	top: 6rem;	left: 5rem; */
 		display: block;
 		width: 100%;
 		padding: 0 1.25rem 0 1.25rem; /* REDUCED from 5rem, 1.25rem=20px; parameters: top right bottom left */	
-		margin-top: 4.5rem;  /* REDUCED 25% from 6rem = 96px; skip past fixed website header (73px) */
+		margin-top: 4.85rem;  /* 4.85rem=77.6px; skip past fixed website header (73px) */
 		font-family: Arial, Helvetica, sans-serif;
 		font-size: 9pt; /* REDUCED from 11pt */
-		color: rgb(0, 0, 128); /* navy-blue */
+		color:rgb(0, 0, 128); /* navy-blue */
 		font-weight: normal;
 	}
-	.contact-box {
-		display: block;
-		/*	flex-wrap: nowrap; */
-		max-width: 243.75px;  /* REDUCED 25% from 325px */
+
+	/* contact form */
+	.contact-body {
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;  /* distribute along main-axis; if row-based, horizontal axis X is main-axis */
+		align-items: center;  /* distribute along cross-axis: if row-based, vertical axis Y is cross-axis */
+		align-content: center;  /* control space between items on cross-axis */
+		max-width: 100%;
 		max-height: fit-content;
-		padding: 1rem;  /* 1rem = 12px */
-		border: 0.5rem solid rgb(0, 0, 128);  /* 0.5rem = 8px; navy-blue */
+		gap: 1rem;  /* 1rem=16px; put space between flex items */
+	}
+	.contact-box {
+		/* display: block; */
+		/* flex-wrap: nowrap; */
+		width: 243.75px;  /* REDUCED 25% from 325px; width WAS max-width */
+		height: 318.75px;  /* REDUCED 25% from 425px; height WAS max-height */
+		padding: 0.75rem;  /* WAS 1rem=16px, now 0.75rem=12px */
+		border: 0.5rem solid rgb(0, 0, 128);  /* 0.5rem=8px; navy-blue */
 		border-radius: 0.5rem;
-		margin: 5rem 0 5rem 0; /* 2.5rem = 40px; 0.5rem = 8px */
-		background-color: #b9d3ee; /* SlateGray2=b9d3ee; Pale Aqua=bcd4e6; LightSteelBlue2=bcd2ee; */
+		margin: 0.3rem 0 0.3rem 0; /* 0.3rem=4.8px; 0.5rem=8px; parameters: top right bottom left */
+		background-color: #b9d3ee; /* Pale Aqua=bcd4e6; LightSteelBlue2=bcd2ee; */
 	}
 	.contactArea {
 		width: 220px;  /* REDUCED from 300px */
 		padding: 0.625rem; /*  */
-		border: 0.135rem solid slategray;  /* 0.135rem = 2px; navy-blue */
-		margin-bottom: 1.5rem;
-		font-size: 10pt;  /* REDUCED from 11pt */
+		border: 0.135rem solid var(--bdr-msg-color);  /* 0.135rem=2px */
+		margin-bottom: 1.12rem;  /* REDUCED 25% from 1.5rem=24px */
+		font-size: 10pt;  /* WAS 11pt */
 	}
 	#contactMsg {
-		height: 90px;  /* REDUCED from 150px */
+		height: 85px;  /* REDUCED from 90px */
 		text-align: left;
 		font-family: geneva,arial;
-		font-size: 10pt;  /* REDUCED from 11pt */
+		font-size: 10pt;  /* WAS 11pt */
 		font-weight: normal;
 	}
 	.contactHdr {
 		font-size: 11pt;
 	}
-	.contactOK {
-		font-size: 10pt;
+	.contactThx {	
+		width: 243.75px;  /* REDUCED 25% from 325px */
+		padding-left: 4.5rem;  /* WAS 6rem=96px, down 25% */
+		padding-top: 3.75rem;  /* WAS 5rem=80px, down 25% */
+		font-size: 12pt;  /* REDUCED from 14pt */
 	}
+	.contactOK {
+		width: 243.75px;  /* REDUCED 25% from 325px */
+		padding-left: 4.5rem;  /* WAS 6rem=96px, down 25% */
+		padding-top: 3.75rem;  /* WAS 5rem=80px, down 25% */		
+		font-size: 10pt;  /* REDUCED from 12pt */
+	}	
 	.contactBtn {
-		width: 75px;  /* REDUCED from 100px */
+		width: 60px;  /* REDUCED from 75px */
+		height: 30px;  /* NEW */
 		border: 0.125rem solid #cc5500; /* REDUCED from 0.25=4px; Burnt Orange; */
 		border-radius: 0.125rem; /* REDUCED from 0.25=4px */
-		padding: 0.9375rem;  /* REDUCED 25% from 1.25rem */
+		padding: 0.25rem;  /* REDUCED from 1.25rem 0.25rem, now shrinks from 0.5rem */
 		font-weight: bold;
-		font-size: 11pt; /* REDUCED from 12pt */
+		font-size: 10pt; /* REDUCED from 12pt */
 		/* color: #e34234;  cinnibar */
 		color: #cc5500;  /* Burnt Orange */
 		background-color: #ffe4c4; /* Bisque1 */
 	}
+	.contact-pic {
+		width: 285px;  /* 243.75px REDUCED ~46% from 525px */
+		height: 244.29px;  /* 208.92px REDUCED ~46% from 450px */
+		padding: 0;
+		border: 0.25rem solid var(--bdr-img-color);  /* 0.25rem=4px; */
+		border-radius: 0.25rem;	
+	}
+	.contact-pic img {
+		width: 285px;  /* 243.75px REDUCED ~46% from 525px */
+		height: 244.29px;  /* 208.92px REDUCED ~46% from 450px */
+	}
 	#cByline {
 		/*
-		background-color: silver;
+		background-color: transparent;
 		color: rgba(51, 85, 204, 1);
 		font-family: geneva,arial;
 		*/

@@ -30,8 +30,28 @@
 
 <body>
 	<!-- burger button for mobile screen header -->
+	<!--
 	<div class="mobile-menu-btn">
 		<img src="menu/menu-burger.png" alt="Mobile Menu Button">
+	</div>
+	-->
+	<div class="mobile-menu">
+		<div class="mobile-menu-logo" >
+			<a href="index.html">
+				<img src="menu/agb_logo_3000.png" alt="Animation Portfolio of Anthony Boulton">
+			</a>
+		</div>
+		<!-- 
+		<div class="mobile-menu-btn">
+			<img src="menu/menu-burger.png" alt="Mobile Menu Button">
+		</div>
+		-->
+		<!-- prepare mobile header for toggle animation (see file 'agb.css') -->
+		<div class="mobile-toggle">
+			<span class="mobile-bar"></span>
+			<span class="mobile-bar"></span>
+			<span class="mobile-bar"></span>
+		</div>
 	</div>
 
 	<!-- regular website header -->
@@ -40,7 +60,7 @@
 			<!-- separate logo from navigation menu so can isolate for mobile screen coding -->
 			<div class="logo" >
 				<a href="index.html">
-					<img src="menu/agb_logo_2500.png" alt="Animation Portfolio of Anthony Boulton">
+					<img src="menu/agb_logo_3000.png" alt="Animation Portfolio of Anthony Boulton">
 				</a>					
 			</div>
 			<!-- unordered list for navigation menu using CSS -->
@@ -49,7 +69,7 @@
 				<li><a href="bckgd.html">Backgrounds</a></li>
 				<li><a href="chard.html">Characters</a></li>
 				<li><a href="lifed.html">Life Drawing</a></li>				
-				<li><a href="cntct.html">Contact</a></li>
+				<li><a id="HomeLink" href="cntct.html">Contact</a></li>
 				<!-- *** online tutor, Dani Krossing, uses dropdown menu under one nav item "gallery" -->
 				<!-- *** go see Youtube video: "Easy Responsive Dropdown Navigation for Beginners with HTML & CSS" -->
 			</ul>
@@ -62,7 +82,6 @@
 <!-- *******************  C O N T A C T   T H A N K S  ****************** -->
 <!-- ******************************************************************** -->
 
-	<!-- Blurb -->
 	<section class="section-body">
 		<div class="contact-body">
 			<div class="contact-box"> 
@@ -75,20 +94,19 @@
 				</form>
 				<br>
 				-->				
-				<h3 class="contactHdr">Thank you!&nbsp;&nbsp;</h3>
-				<br>
+				<h3 class="contactThx">Thank you!</h3>
 				<p class="contactOK">I will reply soon.</p>
-				<p>&nbsp;</p>
+			</div>
+			<div class="contact-pic">
+				<img src="art/cpg_bw.jpg" alt="Image of Artist and his Characters">
 			</div>
 		</div>
-		<br>
 	</section>
 
 <!-- ******************************************************************** -->
 <!-- *************************  C R E D I T S  ************************** -->
 <!-- ******************************************************************** -->
 
-<!-- <br> -->
 <footer>
 	<p id="cByline">
 		art & web authoring &copy;

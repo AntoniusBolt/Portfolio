@@ -1,4 +1,5 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
 
 <!-- ******************************************************************** -->
@@ -34,8 +35,28 @@
 
 <body>
 	<!-- burger button for mobile screen header -->
+	<!--
 	<div class="mobile-menu-btn">
 		<img src="menu/menu-burger.png" alt="Mobile Menu Button">
+	</div>
+	-->
+	<div class="mobile-menu">
+		<div class="mobile-menu-logo" >
+			<a href="index.html">
+				<img src="menu/agb_logo_3000.png" alt="Animation Portfolio of Anthony Boulton">
+			</a>
+		</div>
+		<!-- 
+		<div class="mobile-menu-btn">
+			<img src="menu/menu-burger.png" alt="Mobile Menu Button">
+		</div>
+		-->
+		<!-- prepare mobile header for toggle animation (see file 'agb.css') -->
+		<div class="mobile-toggle">
+			<span class="mobile-bar"></span>
+			<span class="mobile-bar"></span>
+			<span class="mobile-bar"></span>
+		</div>
 	</div>
 
 	<!-- regular website header -->
@@ -44,14 +65,14 @@
 			<!-- separate logo from navigation menu so can isolate for mobile screen coding -->
 			<div class="logo" >
 				<a href="index.html">
-					<img src="menu/agb_logo_2500.png" alt="Animation Portfolio of Anthony Boulton">
+					<img src="menu/agb_logo_3000.png" alt="Animation Portfolio of Anthony Boulton">
 				</a>					
 			</div>
 			<!-- unordered list for navigation menu using CSS -->
 			<ul>			
 				<li><a href="stryb.html">Storyboards</a></li>
 				<li><a href="bckgd.html">Backgrounds</a></li>
-				<li><a class="home" href="#">Characters</a></li>
+				<li><a id="HomeLink" href="chard.html">Characters</a></li>
 				<li><a href="lifed.html">Life Drawing</a></li>				
 				<li><a href="cntct.html">Contact</a></li>
 				<!-- *** online tutor, Dani Krossing, uses dropdown menu under one nav item "gallery" -->
@@ -67,7 +88,7 @@
 <!-- ******************************************************************** -->
 
 	<!-- Blurb -->
-	<section class="section-body">	
+	<section class="section-body">
 		<p>
 			Explore <b>character design samples</b> by clicking on a gallery image.
 			&nbsp;&nbsp;
@@ -128,7 +149,7 @@
 <!-- ******************************************************************** -->
 
 	<script src="js/mobile-nav.js" ></script>
-	
+
 </body>
 
 </html>
