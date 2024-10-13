@@ -1,17 +1,13 @@
 // navigation javascript for mobile screen
 
-let headerMain = document.querySelector(".header-main");
-let headerMobileBtn = document.querySelector(".mobile-menu-btn");
+const toggleBtn = document.querySelector(".mobile-toggle")
+const navMenu = document.querySelector(".header-main")
 
-let isMenuOpen = false;
-
-headerMobileBtn.onclick = function() {
-	if (!isMenuOpen) {  // NOT open
-		headerMain.style.display = "flex";
-		isMenuOpen = true;
-	}
-	else if (isMenuOpen) {
-		headerMain.style.display = "none";
-		isMenuOpen = false;
-	}
-}
+// check for EventTarget, in this case toggleBtn is clicked
+toggleBtn.addEventListener("click", () => {
+	// alert("toggle: " + toggleBtn.style.display);
+	// alert("nav: " + navMenu.style.display);
+	
+	toggleBtn.classList.toggle("active");
+	navMenu.classList.toggle("active");
+})
