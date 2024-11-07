@@ -29,6 +29,7 @@
 	--bdr-img-color: rgba(51, 85, 204, 1);  /* blue violet */
 	--bdr-hvr-img-color:rgba(239, 170, 44, 1); /* orange-y */
 	--bdr-msg-color: rgba(112, 146, 190, 1);  /* WAS slategray, now blue-gray */
+	--bdr-vid-color: darkcyan; /* darkolivegreen; */
 
 	/* navigation link colors for text and their selection */
 	--nav-txt-color: white;
@@ -237,6 +238,13 @@ a {
 	/* filter: grayscale(0%);  full colour rendering */
 	transform: translateY(-0.2rem);  /* raise item up along Y-axis by 0.2rem=3.2px; */
 	border: 0.2rem solid var(--bdr-hvr-img-color);  /* 0.2rem=3.2px; */
+}
+
+/* video */
+.cartoon {
+	border: 0.2rem solid var(--bdr-vid-color);  /* 0.2rem=3.2px */
+	border-radius: 0.2rem;
+	margin: 0.625rem;  /* 0.625rem=10px; 0.5rem=8px */
 }
 
 /* contact form */
