@@ -141,10 +141,12 @@
 			<!--   <source src="videos/lolcmpr.webm" type="video/webm"> -->
 			<!--    "videos/lolcmpr2.mp4" is compressed 480x360 file -->
 			<!--   <source src="videos/lolcmpr.mp4" type="video/mp4"> -->
-			<video class="cartoon" width="320" height="240" playsinline controls="true" poster="videos/loltitle.png">				
+			<!-- <a href="videos/lolcmpr.mp4">Download the video</a> instead. -->
+			<!-- M4V file duplicates MP4 file;  code hack for Apple iPAD -->
+			<video class="cartoon" width="320" height="240" playsinline controls="true" poster="videos/loltitle.png">
+				<source src="videos/lolcmpr2.m4v" type="video/x-m4v">
 				<source src="videos/lolcmpr2.mp4" type="video/mp4">
-				Your browser does not support HTML5 video. 
-  				<a href="videos/lolcmpr.mp4">Download the video</a> instead.
+				Your browser does not support HTML5 video.  				
 			</video>
 			<a href="art/hvw_fc.jpg" data-lightbox="artwork" data-title="superhero vs werewolf"><img src="art/hvw_sm_fc.jpg" alt="superhero vs werewolf"></a>			
 			<a href="art/zoo_fc.jpg" data-lightbox="artwork" data-title="cute animals"><img src="art/zoo_sm_fc.jpg" alt="cute animals"></a>
